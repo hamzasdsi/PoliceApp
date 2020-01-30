@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8e163ebb59b4fe7b66379b61f239199" Name="Diagram1">
+        <EntityTypeShape EntityType="DBpoliceModel.absences" Width="1.5" PointX="8.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.adress" Width="1.5" PointX="3.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.agence" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.conge" Width="1.5" PointX="8.25" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.congeMaladie" Width="1.5" PointX="8.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.decede" Width="1.5" PointX="3.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.decision" Width="1.5" PointX="8.25" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.detach_agence" Width="1.5" PointX="3.75" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Direction" Width="1.5" PointX="0.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.divers" Width="1.5" PointX="11.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Enfants" Width="1.5" PointX="10.5" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Epouses" Width="1.5" PointX="8.25" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.etatCivil" Width="1.5" PointX="8.25" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.etude" Width="1.5" PointX="3.75" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.ficheSolde" Width="1.5" PointX="8.25" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.filesImages" Width="1.5" PointX="8.25" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.fonction" Width="1.5" PointX="3.75" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.formation" Width="1.5" PointX="13.25" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Grad" Width="1.5" PointX="3.75" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.instruction" Width="1.5" PointX="8.25" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.lien_parenté" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.log" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.mutation" Width="1.5" PointX="14.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.notation" Width="1.5" PointX="8.25" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.officier" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Policier" Width="1.5" PointX="6" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.presences" Width="1.5" PointX="8.25" PointY="72" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.punition" Width="1.5" PointX="8.25" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.recompense" Width="1.5" PointX="14.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.sanction" Width="1.5" PointX="11.25" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.service" Width="1.5" PointX="3.75" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.sous_direction" Width="1.5" PointX="3" PointY="77.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Statut" Width="1.5" PointX="3.75" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.tblLieuNaiss" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.typ_doc" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Type_Conge" Width="1.5" PointX="6" PointY="47" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.type_dec" Width="1.5" PointX="12" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.type_decision" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Type_Formation" Width="1.5" PointX="11" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Type_recompense" Width="1.5" PointX="12" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.Type_sanction" Width="1.5" PointX="9" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.User" Width="1.5" PointX="9" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.logs" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.polic" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_absenc" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_congé" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_departement" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_direction" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_enfant" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_formation" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_grade" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_image" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_MUT" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_policDir" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_policierDivorce" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_policierGrad" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_presence" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_recompense" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_resume" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_sanction" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="DBpoliceModel.FK_absences_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_adress" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_conge_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_conge_Type_Conge" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_congeMaladie_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_decede" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_decision_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_mutation_detach_agence" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_detachement" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_Direction" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_sous_direction_Direction" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_divers_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_divers_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Enfants_Epouses" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Enfants_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Epouses_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_etatCivil_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_Etude" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_ficheSolde_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_filesImages_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_fonction" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_formation_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_formation_typeFormation" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_Grad" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_instruction_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_mutation_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_mutation_type_dec" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_notation_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_Policier_Statut" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_presences_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_punition_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_recompense_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_sanction_Policier" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_recompense_Type_recompense" ManuallyRouted="false" />
+        <AssociationConnector Association="DBpoliceModel.FK_sanction_Type_sanction" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_congeAnn" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_congeMal" Width="1.5" PointX="15.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_punition" Width="1.5" PointX="15.375" PointY="9.75" />
+        <AssociationConnector Association="DBpoliceModel.FK_punition_punition" />
+        <EntityTypeShape EntityType="DBpoliceModel.Affectation" Width="1.5" PointX="8.25" PointY="17.375" />
+        <AssociationConnector Association="DBpoliceModel.FK_Affectation_Affectation" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_affetc" Width="1.5" PointX="15.375" PointY="12.75" />
+        <EntityTypeShape EntityType="DBpoliceModel.congeAnnuel" Width="1.5" PointX="8.25" PointY="79.375" />
+        <AssociationConnector Association="DBpoliceModel.FK_congeAnnuel_Policier" />
+        <EntityTypeShape EntityType="DBpoliceModel.View_decision" Width="1.5" PointX="15.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

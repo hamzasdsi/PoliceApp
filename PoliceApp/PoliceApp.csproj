@@ -1,0 +1,2219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{142CA3FB-751D-46AE-91A1-095E1C23F935}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoliceApp</RootNamespace>
+    <AssemblyName>PoliceApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\SetupPoliceApp2\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>55</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>296D0749A4C3A5A1ABF6AE4E41F57DE3CEEAB169</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PoliceApp_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PoliceApp_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.3.8.0\lib\net45\Accord.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accord.Controls.Imaging, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Controls.Imaging.3.8.0\lib\net45\Accord.Controls.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accord.Imaging, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Imaging.3.8.0\lib\net45\Accord.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net45\Accord.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net45\Accord.Math.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net45\Accord.Statistics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accord.Video, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Video.3.8.0\lib\net45\Accord.Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.5.6403.13419, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.5.6403.13419\lib\net35-client\CircularProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Dynamsoft.BarcodeGenerator">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.BarcodeGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.BarcodeReader">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.BarcodeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.Camera">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Camera.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.Forms.Viewer">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Forms.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.ImageCore">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.ImageCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.OCR">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.OCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.PDF">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.Twain">
+      <HintPath>..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Twain.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Interop.WIA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.WIA.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWLibrary.Winform">
+      <HintPath>..\packages\JWLibrary.Winform.0.1.0\lib\net45\JWLibrary.Winform.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WinForms-ModernUI.1.3.0.1\lib\net45\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\WinForms-ModernUI.1.3.0.1\lib\net45\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WinForms-ModernUI.1.3.0.1\lib\net45\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="RibbonLib">
+      <HintPath>F:\Evatis\packages\RibbonLib.2.7.9.0\lib\net40\RibbonLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=17.1460.0.53, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.17.1.0.53\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=17.1460.0.53, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.1.0.53\lib\net46\Syncfusion.Licensing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=17.1460.0.53, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.17.1.0.53\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.Ribbon">
+      <HintPath>..\..\Users\Admin123\Downloads\Ribbon_Release_2018-03-19\Ribbon_Release_2018-03-19_NET45\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TallComponents.PDF.Controls.WinForms, Version=3.0.31.0, Culture=neutral, PublicKeyToken=76bf2dedaa68ccb5, processorArchitecture=MSIL">
+      <HintPath>..\packages\TallComponents.PDFControls.WinForms.3.0.31\lib\net40\TallComponents.PDF.Controls.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="absen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="absen.Designer.cs">
+      <DependentUpon>absen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="absences.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="adress.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Affectation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="agence.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CameraUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CameraUI.designer.cs">
+      <DependentUpon>CameraUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conge.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="congeAnnuel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="congeMaladie.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\RoundedRectanglePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\TabHead.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="decede.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="decision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="decisionDoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>decisionDoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="detach_agence.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Direction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dossierpro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dossierpro.Designer.cs">
+      <DependentUpon>dossierpro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enfants.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Epouses.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="etatCivil.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="etude.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ficheSolde.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="filesImages.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fonction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="formation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="infoAffect.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infoAffect.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="infoconge.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infoconge.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="infoconge2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infoconge2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="infopro.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infopro.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="infopro2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infopro2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="instruction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lien_parenté.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="log.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="logs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="mutation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="notation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="officier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="polic.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Policier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="presences.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="recompense.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Absent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Absent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AjoutPolicier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutPolicier.Designer.cs">
+      <DependentUpon>AjoutPolicier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttesHeber.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttesHeber.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AttestConge.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttestConge.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsFunc.cs" />
+    <Compile Include="CommonClasses.cs" />
+    <Compile Include="congé.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="congé.Designer.cs">
+      <DependentUpon>congé.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="departement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="departement.designer.cs">
+      <DependentUpon>departement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="docmn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="docmn.Designer.cs">
+      <DependentUpon>docmn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="documents.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>documents.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="echelon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="echelon.Designer.cs">
+      <DependentUpon>echelon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EffectifParDirec.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EffectifParDirec.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="family.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="family.Designer.cs">
+      <DependentUpon>family.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdetachement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdetachement.Designer.cs">
+      <DependentUpon>fdetachement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fetude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fetude.Designer.cs">
+      <DependentUpon>fetude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMut.Designer.cs">
+      <DependentUpon>formMut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frecherche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frecherche.Designer.cs">
+      <DependentUpon>frecherche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmdivorce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmdivorce.designer.cs">
+      <DependentUpon>frmdivorce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmformation.designer.cs">
+      <DependentUpon>frmformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatient.designer.cs">
+      <DependentUpon>frmPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistration.designer.cs">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSanction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSanction.Designer.cs">
+      <DependentUpon>FrmSanction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmutation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmutation.designer.cs">
+      <DependentUpon>frmutation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fservice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fservice.Designer.cs">
+      <DependentUpon>fservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestionPrimeDecoration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionPrimeDecoration.Designer.cs">
+      <DependentUpon>gestionPrimeDecoration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="grade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="grade.designer.cs">
+      <DependentUpon>grade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lisConge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lisConge.Designer.cs">
+      <DependentUpon>lisConge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listeConge.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listeConge.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="officer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="officer.Designer.cs">
+      <DependentUpon>officer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="piecejoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="piecejoint.Designer.cs">
+      <DependentUpon>piecejoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicierParGrade.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PolicierParGrade.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="presence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presence.Designer.cs">
+      <DependentUpon>presence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="gestionPunition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionPunition.Designer.cs">
+      <DependentUpon>gestionPunition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="punition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="punition.Designer.cs">
+      <DependentUpon>punition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RapportGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RapportGrade.Designer.cs">
+      <DependentUpon>RapportGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Recompen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recompen.Designer.cs">
+      <DependentUpon>Recompen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportingMUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportingMUT.Designer.cs">
+      <DependentUpon>ReportingMUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resumepolicier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resumepolicier.Designer.cs">
+      <DependentUpon>resumepolicier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resump.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resump.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sanction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="service.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sous_direction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stat.Designer.cs">
+      <DependentUpon>stat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="statMarie.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>statMarie.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Statut.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLieuNaiss.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="typeconge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="typeconge.designer.cs">
+      <DependentUpon>typeconge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="typefonction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="typefonction.designer.cs">
+      <DependentUpon>typefonction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="typeformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="typeformation.designer.cs">
+      <DependentUpon>typeformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="typerecompense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="typerecompense.designer.cs">
+      <DependentUpon>typerecompense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Type_Conge.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="type_dec.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="type_decision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type_Formation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type_recompense.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type_sanction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="typ_doc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="utilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="utilisateur.Designer.cs">
+      <DependentUpon>utilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewdossier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewdossier.Designer.cs">
+      <DependentUpon>viewdossier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_absenc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_affetc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_congeAnn.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_congeMal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_congé.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_decision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_departement.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_direction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_enfant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_formation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_grade.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_image.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_MUT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_policDir.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_policierDivorce.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_policierGrad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_presence.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_punition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_recompense.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_resume.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_sanction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZoomForm.designer.cs">
+      <DependentUpon>ZoomForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="absen.resx">
+      <DependentUpon>absen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CameraUI.resx">
+      <DependentUpon>CameraUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="decisionDoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>decisionDoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dossierpro.resx">
+      <DependentUpon>dossierpro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infoAffect.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>infoAffect.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infoconge.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>infoconge.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infoconge2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>infoconge2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infopro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>infopro.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infopro2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>infopro2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\Absent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Absent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutPolicier.resx">
+      <DependentUpon>AjoutPolicier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttesHeber.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AttesHeber.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttestConge.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AttestConge.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="congé.resx">
+      <DependentUpon>congé.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="departement.resx">
+      <DependentUpon>departement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docmn.resx">
+      <DependentUpon>docmn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="documents.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>documents.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="echelon.resx">
+      <DependentUpon>echelon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectifParDirec.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EffectifParDirec.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="family.resx">
+      <DependentUpon>family.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdetachement.resx">
+      <DependentUpon>fdetachement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fetude.resx">
+      <DependentUpon>fetude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMut.resx">
+      <DependentUpon>formMut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frecherche.resx">
+      <DependentUpon>frecherche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmdivorce.resx">
+      <DependentUpon>frmdivorce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmformation.resx">
+      <DependentUpon>frmformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatient.resx">
+      <DependentUpon>frmPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistration.resx">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSanction.resx">
+      <DependentUpon>FrmSanction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmutation.resx">
+      <DependentUpon>frmutation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fservice.resx">
+      <DependentUpon>fservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionPrimeDecoration.resx">
+      <DependentUpon>gestionPrimeDecoration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="grade.resx">
+      <DependentUpon>grade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lisConge.resx">
+      <DependentUpon>lisConge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listeConge.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listeConge.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="officer.resx">
+      <DependentUpon>officer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="piecejoint.resx">
+      <DependentUpon>piecejoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolicierParGrade.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PolicierParGrade.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presence.resx">
+      <DependentUpon>presence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionPunition.resx">
+      <DependentUpon>gestionPunition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="punition.resx">
+      <DependentUpon>punition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RapportGrade.resx">
+      <DependentUpon>RapportGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Recap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recompen.resx">
+      <DependentUpon>Recompen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportingMUT.resx">
+      <DependentUpon>ReportingMUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resumepolicier.resx">
+      <DependentUpon>resumepolicier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resump.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>resump.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stat.resx">
+      <DependentUpon>stat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statMarie.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>statMarie.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="typeconge.resx">
+      <DependentUpon>typeconge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="typefonction.resx">
+      <DependentUpon>typefonction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="typeformation.resx">
+      <DependentUpon>typeformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="typerecompense.resx">
+      <DependentUpon>typerecompense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="utilisateur.resx">
+      <DependentUpon>utilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewdossier.resx">
+      <DependentUpon>viewdossier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZoomForm.resx">
+      <DependentUpon>ZoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PoliceApp_1_TemporaryKey.pfx" />
+    <None Include="PoliceApp_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\15118214-police-officer-with-a-sign-board-on-the-white-background.jpg" />
+    <None Include="Resources\44409475-résumé-creative-fond-concept-de-vecteur-pour-le-web-et-les-applications-mobiles-modèle-de-conception-illus.jpg" />
+    <None Include="Resources\68091927-police-cap-and-baton-flat-icon-on-grey-background-policeman-uniform-vector-illustration.jpg" />
+    <None Include="Resources\687_example.jpg" />
+    <None Include="Resources\images %282%29.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\depositphotos_56245115-stock-illustration-policeman-circle-background-ico.jpg" />
+    <None Include="Resources\images %283%29.jpg" />
+    <None Include="Resources\placa-de-policia-de-oro_23-2147497516.jpg" />
+    <None Include="Resources\image2.jpg" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReadMe-AspriseOCR.txt" />
+    <None Include="Resources\close-window.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\ic_action_search %283%29.png" />
+    <None Include="Resources\icons8-shutdown-64.png" />
+    <None Include="Resources\icons8-shutdown-64 %281%29.png" />
+    <None Include="Resources\icons8-add-user-male-64.png" />
+    <None Include="Resources\icons8-find-user-male-64.png" />
+    <None Include="Resources\icons8-leave-64.png" />
+    <None Include="Resources\policeman.png" />
+    <None Include="Resources\auction.png" />
+    <None Include="Resources\medal.png" />
+    <None Include="Resources\medal %281%29.png" />
+    <None Include="Resources\notepad.png" />
+    <None Include="Resources\seminar.png" />
+    <None Include="Resources\icons8-buy-upgrade-64.png" />
+    <None Include="Resources\games-player-upgrading-level-symbol.png" />
+    <None Include="Resources\icons8-attendance-filled-50.png" />
+    <None Include="Resources\scrolling.png" />
+    <None Include="Resources\family.png" />
+    <None Include="Resources\icons8-document-64.png" />
+    <None Include="Resources\icons8-line-chart-64.png" />
+    <None Include="Resources\room.png" />
+    <None Include="Resources\seo.png" />
+    <None Include="Resources\seo %281%29.png" />
+    <None Include="Resources\seo %284%29.png" />
+    <None Include="Resources\big_arrow_down.png" />
+    <None Include="Resources\big_arrow_up.png" />
+    <None Include="Resources\main_bg.png" />
+    <None Include="Resources\picboxAddBarcode_Disabled.png" />
+    <None Include="Resources\picboxAddBarcode_Down.png" />
+    <None Include="Resources\picboxAddBarcode_Enter.png" />
+    <None Include="Resources\picboxAddBarcode_Leave.png" />
+    <None Include="Resources\picboxAnnotationBar.png" />
+    <None Include="Resources\picboxClose_Down.png" />
+    <None Include="Resources\picboxClose_Enter.png" />
+    <None Include="Resources\picboxClose_Leave.png" />
+    <None Include="Resources\picboxCrop_Disabled.png" />
+    <None Include="Resources\picboxCrop_Down.png" />
+    <None Include="Resources\picboxCrop_Enter.png" />
+    <None Include="Resources\picboxCrop_Leave.png" />
+    <None Include="Resources\picboxCurrentImage_Leave.png" />
+    <None Include="Resources\picboxCut_Disabled.png" />
+    <None Include="Resources\picboxCut_Down.png" />
+    <None Include="Resources\picboxCut_Enter.png" />
+    <None Include="Resources\picboxCut_Leave.png" />
+    <None Include="Resources\picboxDelete_Disabled.png" />
+    <None Include="Resources\picboxDelete_Down.png" />
+    <None Include="Resources\picboxDelete_Enter.png" />
+    <None Include="Resources\picboxDelete_Leave.png" />
+    <None Include="Resources\picboxDeleteAll_Disabled.png" />
+    <None Include="Resources\picboxDeleteAll_Down.png" />
+    <None Include="Resources\picboxDeleteAll_Enter.png" />
+    <None Include="Resources\picboxDeleteAll_Leave.png" />
+    <None Include="Resources\picboxDeleteAnnotationA_Disabled.png" />
+    <None Include="Resources\picboxDeleteAnnotationA_Down.png" />
+    <None Include="Resources\picboxDeleteAnnotationA_Enter.png" />
+    <None Include="Resources\picboxDeleteAnnotationA_Leave.png" />
+    <None Include="Resources\picboxEllipse_Disabled.png" />
+    <None Include="Resources\picboxEllipse_Down.png" />
+    <None Include="Resources\picboxEllipse_Enter.png" />
+    <None Include="Resources\picboxEllipse_Leave.png" />
+    <None Include="Resources\picboxEllipseA_Disabled.png" />
+    <None Include="Resources\picboxEllipseA_Down.png" />
+    <None Include="Resources\picboxEllipseA_Enter.png" />
+    <None Include="Resources\picboxEllipseA_Leave.png" />
+    <None Include="Resources\picboxFirst_Disabled.png" />
+    <None Include="Resources\picboxFirst_Down.png" />
+    <None Include="Resources\picboxFirst_Enter.png" />
+    <None Include="Resources\picboxFirst_Leave.png" />
+    <None Include="Resources\picboxFit_Disabled.png" />
+    <None Include="Resources\picboxFit_Down.png" />
+    <None Include="Resources\picboxFit_Enter.png" />
+    <None Include="Resources\picboxFit_Leave.png" />
+    <None Include="Resources\picboxFlip_Disabled.png" />
+    <None Include="Resources\picboxFlip_Down.png" />
+    <None Include="Resources\picboxFlip_Enter.png" />
+    <None Include="Resources\picboxFlip_Leave.png" />
+    <None Include="Resources\picboxGrab_Disabled.png" />
+    <None Include="Resources\picboxGrab_Down.png" />
+    <None Include="Resources\picboxGrab_Enter.png" />
+    <None Include="Resources\picboxGrab_Leave.png" />
+    <None Include="Resources\picboxHand_Disabled.png" />
+    <None Include="Resources\picboxHand_Down.png" />
+    <None Include="Resources\picboxHand_Enter.png" />
+    <None Include="Resources\picboxHand_Leave.png" />
+    <None Include="Resources\picboxLast_Disabled.png" />
+    <None Include="Resources\picboxLast_Down.png" />
+    <None Include="Resources\picboxLast_Enter.png" />
+    <None Include="Resources\picboxLast_Leave.png" />
+    <None Include="Resources\picboxLine_Disabled.png" />
+    <None Include="Resources\picboxLine_Down.png" />
+    <None Include="Resources\picboxLine_Enter.png" />
+    <None Include="Resources\picboxLine_Leave.png" />
+    <None Include="Resources\picboxLineA_Disabled.png" />
+    <None Include="Resources\picboxLineA_Down.png" />
+    <None Include="Resources\picboxLineA_Enter.png" />
+    <None Include="Resources\picboxLineA_Leave.png" />
+    <None Include="Resources\picboxLoadImage_Disabled.png" />
+    <None Include="Resources\picboxLoadImage_Down.png" />
+    <None Include="Resources\picboxLoadImage_Enter.png" />
+    <None Include="Resources\picboxLoadImage_Leave.png" />
+    <None Include="Resources\picboxMax_Down.png" />
+    <None Include="Resources\picboxMax_Enter.png" />
+    <None Include="Resources\picboxMax_Leave.png" />
+    <None Include="Resources\picboxMin_Down.png" />
+    <None Include="Resources\picboxMin_Enter.png" />
+    <None Include="Resources\picboxMin_Leave.png" />
+    <None Include="Resources\picboxMirror_Disabled.png" />
+    <None Include="Resources\picboxMirror_Down.png" />
+    <None Include="Resources\picboxMirror_Enter.png" />
+    <None Include="Resources\picboxMirror_Leave.png" />
+    <None Include="Resources\picboxNext_Disabled.png" />
+    <None Include="Resources\picboxNext_Down.png" />
+    <None Include="Resources\picboxNext_Enter.png" />
+    <None Include="Resources\picboxNext_Leave.png" />
+    <None Include="Resources\picboxOCR_Disabled.png" />
+    <None Include="Resources\picboxOCR_Down.png" />
+    <None Include="Resources\picboxOCR_Enter.png" />
+    <None Include="Resources\picboxOCR_Leave.png" />
+    <None Include="Resources\picboxOriginalSize_Disabled.png" />
+    <None Include="Resources\picboxOriginalSize_Down.png" />
+    <None Include="Resources\picboxOriginalSize_Enter.png" />
+    <None Include="Resources\picboxOriginalSize_Leave.png" />
+    <None Include="Resources\picboxPoint_Disabled.png" />
+    <None Include="Resources\picboxPoint_Down.png" />
+    <None Include="Resources\picboxPoint_Enter.png" />
+    <None Include="Resources\picboxPoint_Leave.png" />
+    <None Include="Resources\picboxPrevious_Disabled.png" />
+    <None Include="Resources\picboxPrevious_Down.png" />
+    <None Include="Resources\picboxPrevious_Enter.png" />
+    <None Include="Resources\picboxPrevious_Leave.png" />
+    <None Include="Resources\picboxReadBarcode_Disabled.png" />
+    <None Include="Resources\picboxReadBarcode_Down.png" />
+    <None Include="Resources\picboxReadBarcode_Enter.png" />
+    <None Include="Resources\picboxReadBarcode_Leave.png" />
+    <None Include="Resources\picboxRectangle_Disabled.png" />
+    <None Include="Resources\picboxRectangle_Down.png" />
+    <None Include="Resources\picboxRectangle_Enter.png" />
+    <None Include="Resources\picboxRectangle_Leave.png" />
+    <None Include="Resources\picboxRectangleA_Disabled.png" />
+    <None Include="Resources\picboxRectangleA_Down.png" />
+    <None Include="Resources\picboxRectangleA_Enter.png" />
+    <None Include="Resources\picboxRectangleA_Leave.png" />
+    <None Include="Resources\picboxResample_Disabled.png" />
+    <None Include="Resources\picboxResample_Down.png" />
+    <None Include="Resources\picboxResample_Enter.png" />
+    <None Include="Resources\picboxResample_Leave.png" />
+    <None Include="Resources\picboxRotateLeft_Disabled.png" />
+    <None Include="Resources\picboxRotateLeft_Down.png" />
+    <None Include="Resources\picboxRotateLeft_Enter.png" />
+    <None Include="Resources\picboxRotateLeft_Leave.png" />
+    <None Include="Resources\picboxRotateRight_Disabled.png" />
+    <None Include="Resources\picboxRotateRight_Down.png" />
+    <None Include="Resources\picboxRotateRight_Enter.png" />
+    <None Include="Resources\picboxRotateRight_Leave.png" />
+    <None Include="Resources\picboxSave_Disabled.png" />
+    <None Include="Resources\picboxSave_Down.png" />
+    <None Include="Resources\picboxSave_Enter.png" />
+    <None Include="Resources\picboxSave_Leave.png" />
+    <None Include="Resources\picboxScan_Disabled.png" />
+    <None Include="Resources\picboxScan_Down.png" />
+    <None Include="Resources\picboxScan_Enter.png" />
+    <None Include="Resources\picboxScan_Leave.png" />
+    <None Include="Resources\picboxText_Disabled.png" />
+    <None Include="Resources\picboxText_Down.png" />
+    <None Include="Resources\picboxText_Enter.png" />
+    <None Include="Resources\picboxText_Leave.png" />
+    <None Include="Resources\picboxTextA_Disabled.png" />
+    <None Include="Resources\picboxTextA_Down.png" />
+    <None Include="Resources\picboxTextA_Enter.png" />
+    <None Include="Resources\picboxTextA_Leave.png" />
+    <None Include="Resources\picboxTotalImage_Leave.png" />
+    <None Include="Resources\picboxZoom_Disabled.png" />
+    <None Include="Resources\picboxZoom_Down.png" />
+    <None Include="Resources\picboxZoom_Enter.png" />
+    <None Include="Resources\picboxZoom_Leave.png" />
+    <None Include="Resources\picboxZoomIn_Disabled.png" />
+    <None Include="Resources\picboxZoomIn_Down.png" />
+    <None Include="Resources\picboxZoomIn_Enter.png" />
+    <None Include="Resources\picboxZoomIn_Leave.png" />
+    <None Include="Resources\picboxZoomOut_Disabled.png" />
+    <None Include="Resources\picboxZoomOut_Down.png" />
+    <None Include="Resources\picboxZoomOut_Enter.png" />
+    <None Include="Resources\picboxZoomOut_Leave.png" />
+    <None Include="Resources\small_arrow_down.png" />
+    <None Include="Resources\small_arrow_up.png" />
+    <None Include="Resources\iconfinder_icon-128-document-scan_314242.png" />
+    <None Include="Resources\icons8-scanner-48.png" />
+    <Content Include="Resources\time_1920x1200.jpg" />
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="LCC11">
+      <Guid>{EDCD5812-6A06-43C3-AFAC-46EF5D14E22C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MsoEuro">
+      <Guid>{76F6F3F5-9937-11D2-93BB-00105A994D2C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="PJCALLib">
+      <Guid>{914B3ECD-FB15-4802-B97E-19B2F1D4BEC8}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Accord">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Accord.Controls.Imaging">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Accord.Imaging">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Accord.Math">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Accord.Math.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Accord.Statistics">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Accord.Video">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge.Imaging">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge.Math">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge.Video">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge.Video.DirectShow">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="asprise-ocr-api">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="asprise-ocr-dll-bundle-32">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="asprise-ocr-dll-bundle-64">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="asprise-scan-scanner-twain-wia-api">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CircularProgressBar">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="de\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="DotNETTWAINDemo">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.BarcodeGenerator">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.BarcodeReader">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.Camera">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.Forms.Viewer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.ImageCore">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.OCR">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.PDF">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Dynamsoft.Twain">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EntityFramework">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EntityFramework.SqlServer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="es\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="FlashControlV71">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="fr\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Interop.WIA">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="itextsharp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="it\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="JWLibrary.Winform">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework.Fonts">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Model1.Context.tt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Model1.tt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="pt\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ReadMe-AspriseOCR.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\time_1920x1200.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="RibbonLib">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ShockwaveFlashObjects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Syncfusion.Compression.Base">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Syncfusion.Licensing">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Syncfusion.Pdf.Base">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Windows.Forms.Ribbon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Windows.Forms.Ribbon35">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TallComponents.PDF.Controls.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="WinFormAnimation">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="zh-CHS\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="zh-CHT\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBpoliceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="absences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateab" Type="date" />
+    <Property Name="motif" Type="nvarchar" MaxLength="50" />
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="datef" Type="date" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="dateS" Type="date" />
+  </EntityType>
+  <EntityType Name="adress">
+    <Key>
+      <PropertyRef Name="Idaresse" />
+    </Key>
+    <Property Name="Idaresse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adresse" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Affectation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateA" Type="datetime" />
+    <Property Name="lieu" Type="nvarchar(max)" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="numNs" Type="nvarchar" MaxLength="50" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="agence">
+    <Key>
+      <PropertyRef Name="Departement_ID" />
+    </Key>
+    <Property Name="Departement_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="conge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateD" Type="datetime" />
+    <Property Name="dateF" Type="datetime" />
+    <Property Name="typeConge" Type="int" />
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="dateSave" Type="datetime" />
+  </EntityType>
+  <EntityType Name="congeAnnuel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="varbinary(max)" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="dated" Type="datetime" />
+    <Property Name="datef" Type="datetime" />
+    <Property Name="duree" Type="int" />
+  </EntityType>
+  <EntityType Name="congeMaladie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="varbinary(max)" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="dated" Type="datetime" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="datef" Type="datetime" />
+    <Property Name="duree" Type="int" />
+  </EntityType>
+  <EntityType Name="decede">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="decision">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="varbinary(max)" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="id_type_dec" Type="int" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="datetime" />
+  </EntityType>
+  <EntityType Name="detach_agence">
+    <Key>
+      <PropertyRef Name="agence_ID" />
+    </Key>
+    <Property Name="agence_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Direction">
+    <Key>
+      <PropertyRef Name="Direction_ID" />
+    </Key>
+    <Property Name="Direction_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_direction" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="divers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="image" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Enfants">
+    <Key>
+      <PropertyRef Name="Enfant_ID" />
+    </Key>
+    <Property Name="Enfant_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_enfant" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_naissance" Type="datetime" />
+    <Property Name="lieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Epouse_ID" Type="int" />
+    <Property Name="Matricule_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Epouses">
+    <Key>
+      <PropertyRef Name="Epouse_ID" />
+    </Key>
+    <Property Name="Epouse_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_epouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_mariage" Type="datetime" />
+    <Property Name="Date_divorce" Type="datetime" />
+    <Property Name="Statut" Type="nvarchar" MaxLength="50" />
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="nbrenfant" Type="int" />
+    <Property Name="DateN" Type="datetime" />
+    <Property Name="Lieu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="etatCivil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="image" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="etude">
+    <Key>
+      <PropertyRef Name="Niveau_ID" />
+    </Key>
+    <Property Name="Niveau_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ficheSolde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="image" />
+    <Property Name="etatsolde" Type="nvarchar" MaxLength="100" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="filesImages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="image" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="nomimage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="fonction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="formation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateD" Type="date" />
+    <Property Name="dateF" Type="date" />
+    <Property Name="typeFormation" Type="int" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="autorite" Type="nvarchar" MaxLength="50" />
+    <Property Name="idpolicier" Type="int" />
+  </EntityType>
+  <EntityType Name="Grad">
+    <Key>
+      <PropertyRef Name="Grade_ID" />
+    </Key>
+    <Property Name="Grade_ID" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="instruction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="image" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="lien-parenté">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateoperation" Type="datetime" />
+    <Property Name="operation" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.logs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateoperation" Type="datetime" />
+    <Property Name="operation" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mutation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agence" Type="int" />
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="motif" Type="nvarchar" MaxLength="50" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="typedec" Type="int" />
+  </EntityType>
+  <EntityType Name="notation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="image" />
+    <Property Name="notationAnnuelle" Type="nvarchar(max)" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="officier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="titre" Type="nvarchar" MaxLength="50" />
+    <Property Name="idDirec" Type="int" />
+  </EntityType>
+  <EntityType Name="Policier">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="Nom_pere" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_mere" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_naissance" Type="datetime" />
+    <Property Name="Adresse_ID" Type="int" />
+    <Property Name="Taille" Type="int" />
+    <Property Name="Poids" Type="int" />
+    <Property Name="statu" Type="int" />
+    <Property Name="DateDebut_service" Type="datetime" />
+    <Property Name="DateFin_service" Type="datetime" />
+    <Property Name="Numero_CNI" Type="int" />
+    <Property Name="DateDelivrance_CNI" Type="date" />
+    <Property Name="Numero_CP" Type="int" />
+    <Property Name="DateDelivrance_CP" Type="date" />
+    <Property Name="genre" Type="nvarchar" MaxLength="50" />
+    <Property Name="idGrad" Type="int" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="datetime" />
+    <Property Name="photo1" Type="image" />
+    <Property Name="photo2" Type="image" />
+    <Property Name="photo" Type="image" />
+    <Property Name="idfonction" Type="int" />
+    <Property Name="iddirect" Type="int" />
+    <Property Name="nbrepouse" Type="int" />
+    <Property Name="telephone" Type="int" />
+    <Property Name="idetude" Type="int" />
+    <Property Name="idservice" Type="int" />
+    <Property Name="iddetachement" Type="int" />
+    <Property Name="decede" Type="int" />
+    <Property Name="daterecru" Type="datetime" />
+    <Property Name="dateDAvanc" Type="datetime" />
+    <Property Name="LieuN" Type="nvarchar(max)" />
+    <Property Name="Affect" Type="nvarchar(max)" />
+    <Property Name="nbrenfant" Type="int" />
+  </EntityType>
+  <EntityType Name="presences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="present" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="idPolicier" Type="int" />
+  </EntityType>
+  <EntityType Name="punition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomfichier" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="varbinary(max)" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="datecreate" Type="datetime" />
+    <Property Name="createby" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="datefait" Type="datetime" />
+    <Property Name="idtype" Type="int" />
+    <Property Name="duree" Type="int" />
+  </EntityType>
+  <EntityType Name="recompense">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="typeRecomp" Type="int" />
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="autorite" Type="nvarchar(max)" />
+    <Property Name="dateS" Type="date" />
+  </EntityType>
+  <EntityType Name="sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="numdec" Type="int" />
+    <Property Name="motif" Type="nvarchar(max)" />
+    <Property Name="typeSanct" Type="int" />
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="autorite" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sous_direction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" />
+    <Property Name="idDirect" Type="int" />
+  </EntityType>
+  <EntityType Name="Statut">
+    <Key>
+      <PropertyRef Name="Statut_ID" />
+    </Key>
+    <Property Name="Statut_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.sysdiagrams' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="principal_id" />
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblLieuNaiss">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="typ_doc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Type_Conge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="type_dec">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="type_decision">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Type_Formation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Type_recompense">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Type_sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="contactno" Type="nvarchar" MaxLength="50" />
+    <Property Name="joinnigdate" Type="datetime" />
+    <Property Name="usertype" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.polic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="polic">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="Nom_pere" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_mere" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_naissance" Type="datetime" />
+    <Property Name="Adresse_ID" Type="int" />
+    <Property Name="Taille" Type="int" />
+    <Property Name="Poids" Type="int" />
+    <Property Name="statu" Type="int" />
+    <Property Name="DateDebut_service" Type="datetime" />
+    <Property Name="Numero_CNI" Type="int" />
+    <Property Name="DateDelivrance_CNI" Type="date" />
+    <Property Name="Numero_CP" Type="int" />
+    <Property Name="DateDelivrance_CP" Type="date" />
+    <Property Name="DateFin_service" Type="datetime" />
+    <Property Name="genre" Type="nvarchar" MaxLength="50" />
+    <Property Name="idGrad" Type="int" />
+    <Property Name="datedec" Type="datetime" />
+    <Property Name="photo" Type="image" />
+    <Property Name="idfonction" Type="int" />
+    <Property Name="iddirect" Type="int" />
+    <Property Name="nbrepouse" Type="int" />
+    <Property Name="idetude" Type="int" />
+    <Property Name="telephone" Type="int" />
+    <Property Name="idservice" Type="int" />
+    <Property Name="iddetachement" Type="int" />
+    <Property Name="adresse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Idaresse" Type="int" />
+    <Property Name="agence_ID" Type="int" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr4" Type="nvarchar(max)" />
+    <Property Name="id" Type="int" />
+    <Property Name="Expr6" Type="int" />
+    <Property Name="Niveau_ID" Type="int" />
+    <Property Name="Grade_ID" Type="int" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direction_ID" Type="int" />
+    <Property Name="Type_direction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Statut_ID" Type="int" />
+    <Property Name="Expr7" Type="nvarchar" MaxLength="50" />
+    <Property Name="daterecru" Type="datetime" />
+    <Property Name="LieuN" Type="nvarchar(max)" />
+    <Property Name="dateDAvanc" Type="datetime" />
+    <Property Name="Affect" Type="nvarchar(max)" />
+    <Property Name="Nom_epouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="nbrenfant" Type="int" />
+    <Property Name="DateN" Type="datetime" />
+    <Property Name="Lieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Epouse_ID" Type="int" />
+    <Property Name="Date_mariage" Type="datetime" />
+    <Property Name="Date_divorce" Type="datetime" />
+    <Property Name="Statut" Type="nvarchar" MaxLength="50" />
+    <Property Name="idPolicier" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_absenc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_absenc">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_pere" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_mere" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateab" Type="date" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="datef" Type="date" />
+    <Property Name="dateS" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_affetc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_affetc">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="dateA" Type="datetime" />
+    <Property Name="lieu" Type="nvarchar(max)" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="numNs" Type="nvarchar" MaxLength="50" />
+    <Property Name="document" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_congé' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_congé">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="dateD" Type="datetime" />
+    <Property Name="dateF" Type="datetime" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="dateSave" Type="datetime" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Type_direction" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_congeAnn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_congeAnn">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="dated" Type="datetime" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="duree" Type="int" />
+    <Property Name="document" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_congeMal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_congeMal">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="dated" Type="datetime" />
+    <Property Name="duree" Type="int" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_decision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_decision">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="datedec" Type="datetime" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_departement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_departement">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_direction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_direction">
+    <Key>
+      <PropertyRef Name="Direction_ID" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="Direction_ID" Type="int" Nullable="false" />
+    <Property Name="Type_direction" Type="nvarchar(max)" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" />
+    <Property Name="idDirect" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="nvarchar(max)" />
+    <Property Name="idsouDirect" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_enfant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_enfant">
+    <Key>
+      <PropertyRef Name="Enfant_ID" />
+    </Key>
+    <Property Name="Nom_enfant" Type="nvarchar" MaxLength="50" />
+    <Property Name="Enfant_ID" Type="int" Nullable="false" />
+    <Property Name="Date_naissance" Type="datetime" />
+    <Property Name="lieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_epouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="Matricule_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_formation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_formation">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateD" Type="date" />
+    <Property Name="dateF" Type="date" />
+    <Property Name="autorite" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_grade' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_grade">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_image' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="image" Type="image" />
+    <Property Name="nomimage" Type="nvarchar" MaxLength="50" />
+    <Property Name="idpolicier" Type="int" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_MUT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_MUT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="idPolicier" Type="int" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="typdeci" Type="nvarchar" MaxLength="50" />
+    <Property Name="motif" Type="nvarchar" MaxLength="50" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_policDir' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_policDir">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Type_direction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_policierDivorce' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_policierDivorce">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="Epouse_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Epouse_ID" Type="int" Nullable="false" />
+    <Property Name="Nom_epouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_mariage" Type="datetime" />
+    <Property Name="Date_divorce" Type="datetime" />
+    <Property Name="Statut" Type="nvarchar" MaxLength="50" />
+    <Property Name="nbrenfant" Type="int" />
+    <Property Name="Expr1" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_policierGrad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_policierGrad">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_presence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_presence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="present" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Matricule_ID" Type="int" />
+    <Property Name="idPolicier" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_punition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_punition">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="datefait" Type="datetime" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_recompense' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_recompense">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="autorite" Type="nvarchar(max)" />
+    <Property Name="numdec" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_resume' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_resume">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="nvarchar(max)" />
+    <Property Name="etatCivil" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_naissance" Type="datetime" />
+    <Property Name="grade" Type="nvarchar" MaxLength="50" />
+    <Property Name="daterecru" Type="datetime" />
+    <Property Name="Matricule_ID" Type="int" Nullable="false" />
+    <Property Name="nbrenfant" Type="int" />
+    <Property Name="photo" Type="image" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="datedec" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBpolice.dbo.View_sanction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Matricule_ID" Type="int" />
+    <Property Name="Nom_policier" Type="nvarchar" MaxLength="50" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="datedec" Type="date" />
+    <Property Name="numdec" Type="int" />
+    <Property Name="motif" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr1" Type="nvarchar" MaxLength="50" />
+    <Property Name="autorite" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_absences_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="absences" Type="Self.absences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="absences">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Affectation_Affectation">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="Affectation" Type="Self.Affectation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Affectation">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_conge_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="conge" Type="Self.conge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="conge">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_conge_Type_Conge">
+    <End Role="Type_Conge" Type="Self.Type_Conge" Multiplicity="0..1" />
+    <End Role="conge" Type="Self.conge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_Conge">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="conge">
+        <PropertyRef Name="typeConge" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_congeAnnuel_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="congeAnnuel" Type="Self.congeAnnuel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="congeAnnuel">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_congeMaladie_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="congeMaladie" Type="Self.congeMaladie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="congeMaladie">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_decision_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="decision" Type="Self.decision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="decision">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_divers_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="divers" Type="Self.divers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="divers">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_divers_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="divers" Type="Self.divers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="divers">
+        <PropertyRef Name="createby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enfants_Epouses">
+    <End Role="Epouses" Type="Self.Epouses" Multiplicity="0..1" />
+    <End Role="Enfants" Type="Self.Enfants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Epouses">
+        <PropertyRef Name="Epouse_ID" />
+      </Principal>
+      <Dependent Role="Enfants">
+        <PropertyRef Name="Epouse_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enfants_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="Enfants" Type="Self.Enfants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Enfants">
+        <PropertyRef Name="Matricule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Epouses_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="Epouses" Type="Self.Epouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Epouses">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_etatCivil_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="etatCivil" Type="Self.etatCivil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="etatCivil">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ficheSolde_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="ficheSolde" Type="Self.ficheSolde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="ficheSolde">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_filesImages_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="filesImages" Type="Self.filesImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="filesImages">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_formation_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="formation" Type="Self.formation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="formation">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_formation_typeFormation">
+    <End Role="Type_Formation" Type="Self.Type_Formation" Multiplicity="0..1" />
+    <End Role="formation" Type="Self.formation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_Formation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="formation">
+        <PropertyRef Name="typeFormation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instruction_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="instruction" Type="Self.instruction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="instruction">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mutation_detach_agence">
+    <End Role="detach_agence" Type="Self.detach_agence" Multiplicity="0..1" />
+    <End Role="mutation" Type="Self.mutation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="detach_agence">
+        <PropertyRef Name="agence_ID" />
+      </Principal>
+      <Dependent Role="mutation">
+        <PropertyRef Name="agence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mutation_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="mutation" Type="Self.mutation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="mutation">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mutation_type_dec">
+    <End Role="type_dec" Type="Self.type_dec" Multiplicity="0..1" />
+    <End Role="mutation" Type="Self.mutation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_dec">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mutation">
+        <PropertyRef Name="typedec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notation_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="notation" Type="Self.notation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="notation">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_adress">
+    <End Role="adress" Type="Self.adress" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adress">
+        <PropertyRef Name="Idaresse" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="Adresse_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_decede">
+    <End Role="decede" Type="Self.decede" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="decede">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="decede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_detachement">
+    <End Role="detach_agence" Type="Self.detach_agence" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="detach_agence">
+        <PropertyRef Name="agence_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="iddetachement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Direction">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="Direction_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="iddirect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Etude">
+    <End Role="etude" Type="Self.etude" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="etude">
+        <PropertyRef Name="Niveau_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idetude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_fonction">
+    <End Role="fonction" Type="Self.fonction" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fonction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idfonction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Grad">
+    <End Role="Grad" Type="Self.Grad" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grad">
+        <PropertyRef Name="Grade_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idGrad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="1" />
+    <End Role="Policier1" Type="Self.Policier" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Policier1">
+        <PropertyRef Name="Matricule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Service">
+    <End Role="service" Type="Self.service" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idservice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Statut">
+    <End Role="Statut" Type="Self.Statut" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statut">
+        <PropertyRef Name="Statut_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="statu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_presences_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="presences" Type="Self.presences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="presences">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_punition_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="punition" Type="Self.punition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="punition">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_punition_punition">
+    <End Role="Type_sanction" Type="Self.Type_sanction" Multiplicity="0..1" />
+    <End Role="punition" Type="Self.punition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_sanction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="punition">
+        <PropertyRef Name="idtype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recompense_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="recompense" Type="Self.recompense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="recompense">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recompense_Type_recompense">
+    <End Role="Type_recompense" Type="Self.Type_recompense" Multiplicity="0..1" />
+    <End Role="recompense" Type="Self.recompense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_recompense">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="recompense">
+        <PropertyRef Name="typeRecomp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanction_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="sanction" Type="Self.sanction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="sanction">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanction_Type_sanction">
+    <End Role="Type_sanction" Type="Self.Type_sanction" Multiplicity="0..1" />
+    <End Role="sanction" Type="Self.sanction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_sanction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sanction">
+        <PropertyRef Name="typeSanct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sous_direction_Direction">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="0..1" />
+    <End Role="sous_direction" Type="Self.sous_direction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="Direction_ID" />
+      </Principal>
+      <Dependent Role="sous_direction">
+        <PropertyRef Name="idDirect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBpoliceModelStoreContainer">
+    <EntitySet Name="absences" EntityType="Self.absences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="adress" EntityType="Self.adress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Affectation" EntityType="Self.Affectation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="agence" EntityType="Self.agence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conge" EntityType="Self.conge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="congeAnnuel" EntityType="Self.congeAnnuel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="congeMaladie" EntityType="Self.congeMaladie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="decede" EntityType="Self.decede" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="decision" EntityType="Self.decision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="detach_agence" EntityType="Self.detach_agence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direction" EntityType="Self.Direction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="divers" EntityType="Self.divers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Enfants" EntityType="Self.Enfants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Epouses" EntityType="Self.Epouses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="etatCivil" EntityType="Self.etatCivil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="etude" EntityType="Self.etude" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ficheSolde" EntityType="Self.ficheSolde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="filesImages" EntityType="Self.filesImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fonction" EntityType="Self.fonction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="formation" EntityType="Self.formation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grad" EntityType="Self.Grad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instruction" EntityType="Self.instruction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lien-parenté" EntityType="Self.lien-parenté" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="log" EntityType="Self.log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mutation" EntityType="Self.mutation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notation" EntityType="Self.notation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="officier" EntityType="Self.officier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Policier" EntityType="Self.Policier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="presences" EntityType="Self.presences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="punition" EntityType="Self.punition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="recompense" EntityType="Self.recompense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sanction" EntityType="Self.sanction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sous_direction" EntityType="Self.sous_direction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Statut" EntityType="Self.Statut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLieuNaiss" EntityType="Self.tblLieuNaiss" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="typ_doc" EntityType="Self.typ_doc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type_Conge" EntityType="Self.Type_Conge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_dec" EntityType="Self.type_dec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_decision" EntityType="Self.type_decision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type_Formation" EntityType="Self.Type_Formation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type_recompense" EntityType="Self.Type_recompense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type_sanction" EntityType="Self.Type_sanction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logs" EntityType="Self.logs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [logs].[id] AS [id], 
+    [logs].[username] AS [username], 
+    [logs].[dateoperation] AS [dateoperation], 
+    [logs].[operation] AS [operation]
+    FROM [dbo].[logs] AS [logs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sysdiagrams].[name] AS [name], 
+    [sysdiagrams].[principal_id] AS [principal_id], 
+    [sysdiagrams].[diagram_id] AS [diagram_id], 
+    [sysdiagrams].[version] AS [version], 
+    [sysdiagrams].[definition] AS [definition]
+    FROM [dbo].[sysdiagrams] AS [sysdiagrams]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="polic" EntityType="Self.polic" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [polic].[Matricule_ID] AS [Matricule_ID], 
+    [polic].[Nom_policier] AS [Nom_policier], 
+    [polic].[Nom_pere] AS [Nom_pere], 
+    [polic].[Nom_mere] AS [Nom_mere], 
+    [polic].[Date_naissance] AS [Date_naissance], 
+    [polic].[Adresse_ID] AS [Adresse_ID], 
+    [polic].[Taille] AS [Taille], 
+    [polic].[Poids] AS [Poids], 
+    [polic].[statu] AS [statu], 
+    [polic].[DateDebut_service] AS [DateDebut_service], 
+    [polic].[Numero_CNI] AS [Numero_CNI], 
+    [polic].[DateDelivrance_CNI] AS [DateDelivrance_CNI], 
+    [polic].[Numero_CP] AS [Numero_CP], 
+    [polic].[DateDelivrance_CP] AS [DateDelivrance_CP], 
+    [polic].[DateFin_service] AS [DateFin_service], 
+    [polic].[genre] AS [genre], 
+    [polic].[idGrad] AS [idGrad], 
+    [polic].[datedec] AS [datedec], 
+    [polic].[photo] AS [photo], 
+    [polic].[idfonction] AS [idfonction], 
+    [polic].[iddirect] AS [iddirect], 
+    [polic].[nbrepouse] AS [nbrepouse], 
+    [polic].[idetude] AS [idetude], 
+    [polic].[telephone] AS [telephone], 
+    [polic].[idservice] AS [idservice], 
+    [polic].[iddetachement] AS [iddetachement], 
+    [polic].[adresse] AS [adresse], 
+    [polic].[Idaresse] AS [Idaresse], 
+    [polic].[agence_ID] AS [agence_ID], 
+    [polic].[Libelle] AS [Libelle], 
+    [polic].[Expr1] AS [Expr1], 
+    [polic].[Expr2] AS [Expr2], 
+    [polic].[Expr3] AS [Expr3], 
+    [polic].[Expr4] AS [Expr4], 
+    [polic].[id] AS [id], 
+    [polic].[Expr6] AS [Expr6], 
+    [polic].[Niveau_ID] AS [Niveau_ID], 
+    [polic].[Grade_ID] AS [Grade_ID], 
+    [polic].[numdec] AS [numdec], 
+    [polic].[Direction_ID] AS [Direction_ID], 
+    [polic].[Type_direction] AS [Type_direction], 
+    [polic].[Statut_ID] AS [Statut_ID], 
+    [polic].[Expr7] AS [Expr7], 
+    [polic].[daterecru] AS [daterecru], 
+    [polic].[LieuN] AS [LieuN], 
+    [polic].[dateDAvanc] AS [dateDAvanc], 
+    [polic].[Affect] AS [Affect], 
+    [polic].[Nom_epouse] AS [Nom_epouse], 
+    [polic].[nbrenfant] AS [nbrenfant], 
+    [polic].[DateN] AS [DateN], 
+    [polic].[Lieu] AS [Lieu], 
+    [polic].[Epouse_ID] AS [Epouse_ID], 
+    [polic].[Date_mariage] AS [Date_mariage], 
+    [polic].[Date_divorce] AS [Date_divorce], 
+    [polic].[Statut] AS [Statut], 
+    [polic].[idPolicier] AS [idPolicier]
+    FROM [dbo].[polic] AS [polic]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_absenc" EntityType="Self.View_absenc" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_absenc].[Nom_policier] AS [Nom_policier], 
+    [View_absenc].[Nom_pere] AS [Nom_pere], 
+    [View_absenc].[Nom_mere] AS [Nom_mere], 
+    [View_absenc].[dateab] AS [dateab], 
+    [View_absenc].[libelle] AS [libelle], 
+    [View_absenc].[Matricule_ID] AS [Matricule_ID], 
+    [View_absenc].[comment] AS [comment], 
+    [View_absenc].[datef] AS [datef], 
+    [View_absenc].[dateS] AS [dateS]
+    FROM [dbo].[View_absenc] AS [View_absenc]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_affetc" EntityType="Self.View_affetc" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_affetc].[Matricule_ID] AS [Matricule_ID], 
+    [View_affetc].[dateA] AS [dateA], 
+    [View_affetc].[lieu] AS [lieu], 
+    [View_affetc].[comment] AS [comment], 
+    [View_affetc].[numNs] AS [numNs], 
+    [View_affetc].[document] AS [document]
+    FROM [dbo].[View_affetc] AS [View_affetc]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_congé" EntityType="Self.View_congé" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_congé].[dateD] AS [dateD], 
+    [View_congé].[dateF] AS [dateF], 
+    [View_congé].[libelle] AS [libelle], 
+    [View_congé].[Nom_policier] AS [Nom_policier], 
+    [View_congé].[Matricule_ID] AS [Matricule_ID], 
+    [View_congé].[dateSave] AS [dateSave], 
+    [View_congé].[id] AS [id], 
+    [View_congé].[Type_direction] AS [Type_direction]
+    FROM [dbo].[View_congé] AS [View_congé]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_congeAnn" EntityType="Self.View_congeAnn" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_congeAnn].[dated] AS [dated], 
+    [View_congeAnn].[Matricule_ID] AS [Matricule_ID], 
+    [View_congeAnn].[duree] AS [duree], 
+    [View_congeAnn].[document] AS [document]
+    FROM [dbo].[View_congeAnn] AS [View_congeAnn]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_congeMal" EntityType="Self.View_congeMal" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_congeMal].[dated] AS [dated], 
+    [View_congeMal].[duree] AS [duree], 
+    [View_congeMal].[Matricule_ID] AS [Matricule_ID]
+    FROM [dbo].[View_congeMal] AS [View_congeMal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_decision" EntityType="Self.View_decision" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_decision].[datedec] AS [datedec], 
+    [View_decision].[comment] AS [comment], 
+    [View_decision].[Matricule_ID] AS [Matricule_ID]
+    FROM [dbo].[View_decision] AS [View_decision]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_departement" EntityType="Self.View_departement" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_departement].[Nom_policier] AS [Nom_policier], 
+    [View_departement].[Matricule_ID] AS [Matricule_ID], 
+    [View_departement].[Libelle] AS [Libelle]
+    FROM [dbo].[View_departement] AS [View_departement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_direction" EntityType="Self.View_direction" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_direction].[Direction_ID] AS [Direction_ID], 
+    [View_direction].[Type_direction] AS [Type_direction], 
+    [View_direction].[id] AS [id], 
+    [View_direction].[libelle] AS [libelle], 
+    [View_direction].[idDirect] AS [idDirect], 
+    [View_direction].[Expr1] AS [Expr1], 
+    [View_direction].[Expr2] AS [Expr2], 
+    [View_direction].[idsouDirect] AS [idsouDirect]
+    FROM [dbo].[View_direction] AS [View_direction]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_enfant" EntityType="Self.View_enfant" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_enfant].[Nom_enfant] AS [Nom_enfant], 
+    [View_enfant].[Enfant_ID] AS [Enfant_ID], 
+    [View_enfant].[Date_naissance] AS [Date_naissance], 
+    [View_enfant].[lieu] AS [lieu], 
+    [View_enfant].[Nom_epouse] AS [Nom_epouse], 
+    [View_enfant].[Nom_policier] AS [Nom_policier], 
+    [View_enfant].[Matricule_ID] AS [Matricule_ID]
+    FROM [dbo].[View_enfant] AS [View_enfant]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_formation" EntityType="Self.View_formation" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_formation].[Matricule_ID] AS [Matricule_ID], 
+    [View_formation].[Nom_policier] AS [Nom_policier], 
+    [View_formation].[dateD] AS [dateD], 
+    [View_formation].[dateF] AS [dateF], 
+    [View_formation].[autorite] AS [autorite], 
+    [View_formation].[datedec] AS [datedec], 
+    [View_formation].[libelle] AS [libelle], 
+    [View_formation].[numdec] AS [numdec], 
+    [View_formation].[id] AS [id]
+    FROM [dbo].[View_formation] AS [View_formation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_grade" EntityType="Self.View_grade" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_grade].[Matricule_ID] AS [Matricule_ID], 
+    [View_grade].[Nom_policier] AS [Nom_policier], 
+    [View_grade].[Libelle] AS [Libelle]
+    FROM [dbo].[View_grade] AS [View_grade]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_image" EntityType="Self.View_image" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_image].[image] AS [image], 
+    [View_image].[nomimage] AS [nomimage], 
+    [View_image].[idpolicier] AS [idpolicier], 
+    [View_image].[id] AS [id]
+    FROM [dbo].[View_image] AS [View_image]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_MUT" EntityType="Self.View_MUT" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_MUT].[idPolicier] AS [idPolicier], 
+    [View_MUT].[Libelle] AS [Libelle], 
+    [View_MUT].[typdeci] AS [typdeci], 
+    [View_MUT].[motif] AS [motif], 
+    [View_MUT].[numdec] AS [numdec], 
+    [View_MUT].[datedec] AS [datedec], 
+    [View_MUT].[id] AS [id]
+    FROM [dbo].[View_MUT] AS [View_MUT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_policDir" EntityType="Self.View_policDir" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_policDir].[Type_direction] AS [Type_direction], 
+    [View_policDir].[Nom_policier] AS [Nom_policier], 
+    [View_policDir].[Matricule_ID] AS [Matricule_ID]
+    FROM [dbo].[View_policDir] AS [View_policDir]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_policierDivorce" EntityType="Self.View_policierDivorce" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_policierDivorce].[Matricule_ID] AS [Matricule_ID], 
+    [View_policierDivorce].[Nom_policier] AS [Nom_policier], 
+    [View_policierDivorce].[Epouse_ID] AS [Epouse_ID], 
+    [View_policierDivorce].[Nom_epouse] AS [Nom_epouse], 
+    [View_policierDivorce].[Date_mariage] AS [Date_mariage], 
+    [View_policierDivorce].[Date_divorce] AS [Date_divorce], 
+    [View_policierDivorce].[Statut] AS [Statut], 
+    [View_policierDivorce].[nbrenfant] AS [nbrenfant], 
+    [View_policierDivorce].[Expr1] AS [Expr1]
+    FROM [dbo].[View_policierDivorce] AS [View_policierDivorce]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_policierGrad" EntityType="Self.View_policierGrad" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_policierGrad].[Nom_policier] AS [Nom_policier], 
+    [View_policierGrad].[Libelle] AS [Libelle], 
+    [View_policierGrad].[Matricule_ID] AS [Matricule_ID]
+    FROM [dbo].[View_policierGrad] AS [View_policierGrad]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_presence" EntityType="Self.View_presence" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_presence].[id] AS [id], 
+    [View_presence].[present] AS [present], 
+    [View_presence].[Date] AS [Date], 
+    [View_presence].[Matricule_ID] AS [Matricule_ID], 
+    [View_presence].[idPolicier] AS [idPolicier]
+    FROM [dbo].[View_presence] AS [View_presence]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_punition" EntityType="Self.View_punition" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_punition].[libelle] AS [libelle], 
+    [View_punition].[comment] AS [comment], 
+    [View_punition].[datefait] AS [datefait], 
+    [View_punition].[Matricule_ID] AS [Matricule_ID]
+    FROM [dbo].[View_punition] AS [View_punition]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_recompense" EntityType="Self.View_recompense" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_recompense].[Nom_policier] AS [Nom_policier], 
+    [View_recompense].[Matricule_ID] AS [Matricule_ID], 
+    [View_recompense].[datedec] AS [datedec], 
+    [View_recompense].[libelle] AS [libelle], 
+    [View_recompense].[autorite] AS [autorite], 
+    [View_recompense].[numdec] AS [numdec], 
+    [View_recompense].[id] AS [id]
+    FROM [dbo].[View_recompense] AS [View_recompense]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_resume" EntityType="Self.View_resume" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_resume].[Nom_policier] AS [Nom_policier], 
+    [View_resume].[etatCivil] AS [etatCivil], 
+    [View_resume].[Date_naissance] AS [Date_naissance], 
+    [View_resume].[grade] AS [grade], 
+    [View_resume].[daterecru] AS [daterecru], 
+    [View_resume].[Matricule_ID] AS [Matricule_ID], 
+    [View_resume].[nbrenfant] AS [nbrenfant], 
+    [View_resume].[photo] AS [photo], 
+    [View_resume].[libelle] AS [libelle], 
+    [View_resume].[comment] AS [comment], 
+    [View_resume].[datedec] AS [datedec]
+    FROM [dbo].[View_resume] AS [View_resume]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_sanction" EntityType="Self.View_sanction" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_sanction].[Matricule_ID] AS [Matricule_ID], 
+    [View_sanction].[Nom_policier] AS [Nom_policier], 
+    [View_sanction].[libelle] AS [libelle], 
+    [View_sanction].[datedec] AS [datedec], 
+    [View_sanction].[numdec] AS [numdec], 
+    [View_sanction].[motif] AS [motif], 
+    [View_sanction].[Expr1] AS [Expr1], 
+    [View_sanction].[autorite] AS [autorite], 
+    [View_sanction].[id] AS [id]
+    FROM [dbo].[View_sanction] AS [View_sanction]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_absences_Policier" Association="Self.FK_absences_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="absences" EntitySet="absences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Affectation_Affectation" Association="Self.FK_Affectation_Affectation">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Affectation" EntitySet="Affectation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_conge_Policier" Association="Self.FK_conge_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="conge" EntitySet="conge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_conge_Type_Conge" Association="Self.FK_conge_Type_Conge">
+      <End Role="Type_Conge" EntitySet="Type_Conge" />
+      <End Role="conge" EntitySet="conge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_congeAnnuel_Policier" Association="Self.FK_congeAnnuel_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="congeAnnuel" EntitySet="congeAnnuel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_congeMaladie_Policier" Association="Self.FK_congeMaladie_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="congeMaladie" EntitySet="congeMaladie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_decision_Policier" Association="Self.FK_decision_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="decision" EntitySet="decision" />
+    </AssociationSet>
+    <AssociationSet Name="FK_divers_Policier" Association="Self.FK_divers_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="divers" EntitySet="divers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_divers_User" Association="Self.FK_divers_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="divers" EntitySet="divers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enfants_Epouses" Association="Self.FK_Enfants_Epouses">
+      <End Role="Epouses" EntitySet="Epouses" />
+      <End Role="Enfants" EntitySet="Enfants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enfants_Policier" Association="Self.FK_Enfants_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Enfants" EntitySet="Enfants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Epouses_Policier" Association="Self.FK_Epouses_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Epouses" EntitySet="Epouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_etatCivil_Policier" Association="Self.FK_etatCivil_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="etatCivil" EntitySet="etatCivil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ficheSolde_Policier" Association="Self.FK_ficheSolde_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="ficheSolde" EntitySet="ficheSolde" />
+    </AssociationSet>
+    <AssociationSet Name="FK_filesImages_Policier" Association="Self.FK_filesImages_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="filesImages" EntitySet="filesImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_formation_Policier" Association="Self.FK_formation_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="formation" EntitySet="formation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_formation_typeFormation" Association="Self.FK_formation_typeFormation">
+      <End Role="Type_Formation" EntitySet="Type_Formation" />
+      <End Role="formation" EntitySet="formation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instruction_Policier" Association="Self.FK_instruction_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="instruction" EntitySet="instruction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mutation_detach_agence" Association="Self.FK_mutation_detach_agence">
+      <End Role="detach_agence" EntitySet="detach_agence" />
+      <End Role="mutation" EntitySet="mutation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mutation_Policier" Association="Self.FK_mutation_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="mutation" EntitySet="mutation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mutation_type_dec" Association="Self.FK_mutation_type_dec">
+      <End Role="type_dec" EntitySet="type_dec" />
+      <End Role="mutation" EntitySet="mutation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notation_Policier" Association="Self.FK_notation_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="notation" EntitySet="notation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_adress" Association="Self.FK_Policier_adress">
+      <End Role="adress" EntitySet="adress" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_decede" Association="Self.FK_Policier_decede">
+      <End Role="decede" EntitySet="decede" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_detachement" Association="Self.FK_Policier_detachement">
+      <End Role="detach_agence" EntitySet="detach_agence" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Direction" Association="Self.FK_Policier_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Etude" Association="Self.FK_Policier_Etude">
+      <End Role="etude" EntitySet="etude" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_fonction" Association="Self.FK_Policier_fonction">
+      <End Role="fonction" EntitySet="fonction" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Grad" Association="Self.FK_Policier_Grad">
+      <End Role="Grad" EntitySet="Grad" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Policier" Association="Self.FK_Policier_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Policier1" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Service" Association="Self.FK_Policier_Service">
+      <End Role="service" EntitySet="service" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Statut" Association="Self.FK_Policier_Statut">
+      <End Role="Statut" EntitySet="Statut" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_presences_Policier" Association="Self.FK_presences_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="presences" EntitySet="presences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_punition_Policier" Association="Self.FK_punition_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="punition" EntitySet="punition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_punition_punition" Association="Self.FK_punition_punition">
+      <End Role="Type_sanction" EntitySet="Type_sanction" />
+      <End Role="punition" EntitySet="punition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recompense_Policier" Association="Self.FK_recompense_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="recompense" EntitySet="recompense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recompense_Type_recompense" Association="Self.FK_recompense_Type_recompense">
+      <End Role="Type_recompense" EntitySet="Type_recompense" />
+      <End Role="recompense" EntitySet="recompense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanction_Policier" Association="Self.FK_sanction_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="sanction" EntitySet="sanction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanction_Type_sanction" Association="Self.FK_sanction_Type_sanction">
+      <End Role="Type_sanction" EntitySet="Type_sanction" />
+      <End Role="sanction" EntitySet="sanction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sous_direction_Direction" Association="Self.FK_sous_direction_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="sous_direction" EntitySet="sous_direction" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

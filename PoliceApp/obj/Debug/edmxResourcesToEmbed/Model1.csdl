@@ -1,0 +1,1572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBpoliceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="absences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateab" Type="DateTime" Precision="0" />
+    <Property Name="motif" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="datef" Type="DateTime" Precision="0" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dateS" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_absences_Policier" FromRole="absences" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="adress">
+    <Key>
+      <PropertyRef Name="Idaresse" />
+    </Key>
+    <Property Name="Idaresse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_adress" FromRole="adress" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="agence">
+    <Key>
+      <PropertyRef Name="Departement_ID" />
+    </Key>
+    <Property Name="Departement_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="conge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateD" Type="DateTime" Precision="3" />
+    <Property Name="dateF" Type="DateTime" Precision="3" />
+    <Property Name="typeConge" Type="Int32" />
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="dateSave" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_conge_Policier" FromRole="conge" ToRole="Policier" />
+    <NavigationProperty Name="Type_Conge" Relationship="Self.FK_conge_Type_Conge" FromRole="conge" ToRole="Type_Conge" />
+  </EntityType>
+  <EntityType Name="congeMaladie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_congeMaladie_Policier" FromRole="congeMaladie" ToRole="Policier" />
+    <Property Name="dated" Type="DateTime" Precision="3" />
+    <Property Name="datef" Type="DateTime" Precision="3" />
+    <Property Name="duree" Type="Int32" />
+  </EntityType>
+  <EntityType Name="decede">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_decede" FromRole="decede" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="decision">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="id_type_dec" Type="Int32" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_decision_Policier" FromRole="decision" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="detach_agence">
+    <Key>
+      <PropertyRef Name="agence_ID" />
+    </Key>
+    <Property Name="agence_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mutation" Relationship="Self.FK_mutation_detach_agence" FromRole="detach_agence" ToRole="mutation" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_detachement" FromRole="detach_agence" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="Direction">
+    <Key>
+      <PropertyRef Name="Direction_ID" />
+    </Key>
+    <Property Name="Direction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_Direction" FromRole="Direction" ToRole="Policier" />
+    <NavigationProperty Name="sous_direction" Relationship="Self.FK_sous_direction_Direction" FromRole="Direction" ToRole="sous_direction" />
+  </EntityType>
+  <EntityType Name="divers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_divers_Policier" FromRole="divers" ToRole="Policier" />
+    <NavigationProperty Name="User" Relationship="Self.FK_divers_User" FromRole="divers" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Enfants">
+    <Key>
+      <PropertyRef Name="Enfant_ID" />
+    </Key>
+    <Property Name="Enfant_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_enfant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_naissance" Type="DateTime" Precision="3" />
+    <Property Name="lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Epouse_ID" Type="Int32" />
+    <Property Name="Matricule_ID" Type="Int32" />
+    <NavigationProperty Name="Epouses" Relationship="Self.FK_Enfants_Epouses" FromRole="Enfants" ToRole="Epouses" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Enfants_Policier" FromRole="Enfants" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="Epouses">
+    <Key>
+      <PropertyRef Name="Epouse_ID" />
+    </Key>
+    <Property Name="Epouse_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_epouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_mariage" Type="DateTime" Precision="3" />
+    <Property Name="Date_divorce" Type="DateTime" Precision="3" />
+    <Property Name="Statut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="nbrenfant" Type="Int32" />
+    <Property Name="DateN" Type="DateTime" Precision="3" />
+    <Property Name="Lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Enfants" Relationship="Self.FK_Enfants_Epouses" FromRole="Epouses" ToRole="Enfants" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Epouses_Policier" FromRole="Epouses" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="etatCivil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_etatCivil_Policier" FromRole="etatCivil" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="etude">
+    <Key>
+      <PropertyRef Name="Niveau_ID" />
+    </Key>
+    <Property Name="Niveau_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_Etude" FromRole="etude" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="ficheSolde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="etatsolde" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_ficheSolde_Policier" FromRole="ficheSolde" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="filesImages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="nomimage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_filesImages_Policier" FromRole="filesImages" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="fonction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_fonction" FromRole="fonction" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="formation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateD" Type="DateTime" Precision="0" />
+    <Property Name="dateF" Type="DateTime" Precision="0" />
+    <Property Name="typeFormation" Type="Int32" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="autorite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idpolicier" Type="Int32" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_formation_Policier" FromRole="formation" ToRole="Policier" />
+    <NavigationProperty Name="Type_Formation" Relationship="Self.FK_formation_typeFormation" FromRole="formation" ToRole="Type_Formation" />
+  </EntityType>
+  <EntityType Name="Grad">
+    <Key>
+      <PropertyRef Name="Grade_ID" />
+    </Key>
+    <Property Name="Grade_ID" Type="Int32" Nullable="false" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_Grad" FromRole="Grad" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="instruction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_instruction_Policier" FromRole="instruction" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="lien_parenté">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateoperation" Type="DateTime" Precision="3" />
+    <Property Name="operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mutation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="agence" Type="Int32" />
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="motif" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="typedec" Type="Int32" />
+    <NavigationProperty Name="detach_agence" Relationship="Self.FK_mutation_detach_agence" FromRole="mutation" ToRole="detach_agence" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_mutation_Policier" FromRole="mutation" ToRole="Policier" />
+    <NavigationProperty Name="type_dec" Relationship="Self.FK_mutation_type_dec" FromRole="mutation" ToRole="type_dec" />
+  </EntityType>
+  <EntityType Name="notation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="notationAnnuelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_notation_Policier" FromRole="notation" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="officier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="titre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idDirec" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Policier">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_pere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_mere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_naissance" Type="DateTime" Precision="3" />
+    <Property Name="Adresse_ID" Type="Int32" />
+    <Property Name="Taille" Type="Int32" />
+    <Property Name="Poids" Type="Int32" />
+    <Property Name="statu" Type="Int32" />
+    <Property Name="DateDebut_service" Type="DateTime" Precision="3" />
+    <Property Name="DateFin_service" Type="DateTime" Precision="3" />
+    <Property Name="Numero_CNI" Type="Int32" />
+    <Property Name="DateDelivrance_CNI" Type="DateTime" Precision="0" />
+    <Property Name="Numero_CP" Type="Int32" />
+    <Property Name="DateDelivrance_CP" Type="DateTime" Precision="0" />
+    <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idGrad" Type="Int32" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="3" />
+    <Property Name="photo1" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="photo2" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idfonction" Type="Int32" />
+    <Property Name="iddirect" Type="Int32" />
+    <Property Name="nbrepouse" Type="Int32" />
+    <Property Name="telephone" Type="Int32" />
+    <Property Name="idetude" Type="Int32" />
+    <Property Name="idservice" Type="Int32" />
+    <Property Name="iddetachement" Type="Int32" />
+    <Property Name="decede" Type="Int32" />
+    <Property Name="daterecru" Type="DateTime" Precision="3" />
+    <Property Name="dateDAvanc" Type="DateTime" Precision="3" />
+    <Property Name="LieuN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Affect" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nbrenfant" Type="Int32" />
+    <NavigationProperty Name="absences" Relationship="Self.FK_absences_Policier" FromRole="Policier" ToRole="absences" />
+    <NavigationProperty Name="adress" Relationship="Self.FK_Policier_adress" FromRole="Policier" ToRole="adress" />
+    <NavigationProperty Name="conge" Relationship="Self.FK_conge_Policier" FromRole="Policier" ToRole="conge" />
+    <NavigationProperty Name="congeMaladie" Relationship="Self.FK_congeMaladie_Policier" FromRole="Policier" ToRole="congeMaladie" />
+    <NavigationProperty Name="decede1" Relationship="Self.FK_Policier_decede" FromRole="Policier" ToRole="decede" />
+    <NavigationProperty Name="decision" Relationship="Self.FK_decision_Policier" FromRole="Policier" ToRole="decision" />
+    <NavigationProperty Name="detach_agence" Relationship="Self.FK_Policier_detachement" FromRole="Policier" ToRole="detach_agence" />
+    <NavigationProperty Name="Direction" Relationship="Self.FK_Policier_Direction" FromRole="Policier" ToRole="Direction" />
+    <NavigationProperty Name="divers" Relationship="Self.FK_divers_Policier" FromRole="Policier" ToRole="divers" />
+    <NavigationProperty Name="Enfants" Relationship="Self.FK_Enfants_Policier" FromRole="Policier" ToRole="Enfants" />
+    <NavigationProperty Name="Epouses" Relationship="Self.FK_Epouses_Policier" FromRole="Policier" ToRole="Epouses" />
+    <NavigationProperty Name="etatCivil" Relationship="Self.FK_etatCivil_Policier" FromRole="Policier" ToRole="etatCivil" />
+    <NavigationProperty Name="etude" Relationship="Self.FK_Policier_Etude" FromRole="Policier" ToRole="etude" />
+    <NavigationProperty Name="ficheSolde" Relationship="Self.FK_ficheSolde_Policier" FromRole="Policier" ToRole="ficheSolde" />
+    <NavigationProperty Name="filesImages" Relationship="Self.FK_filesImages_Policier" FromRole="Policier" ToRole="filesImages" />
+    <NavigationProperty Name="fonction" Relationship="Self.FK_Policier_fonction" FromRole="Policier" ToRole="fonction" />
+    <NavigationProperty Name="formation" Relationship="Self.FK_formation_Policier" FromRole="Policier" ToRole="formation" />
+    <NavigationProperty Name="Grad" Relationship="Self.FK_Policier_Grad" FromRole="Policier" ToRole="Grad" />
+    <NavigationProperty Name="instruction" Relationship="Self.FK_instruction_Policier" FromRole="Policier" ToRole="instruction" />
+    <NavigationProperty Name="mutation" Relationship="Self.FK_mutation_Policier" FromRole="Policier" ToRole="mutation" />
+    <NavigationProperty Name="notation" Relationship="Self.FK_notation_Policier" FromRole="Policier" ToRole="notation" />
+    <NavigationProperty Name="Policier1" Relationship="Self.FK_Policier_Policier" FromRole="Policier" ToRole="Policier1" />
+    <NavigationProperty Name="Policier2" Relationship="Self.FK_Policier_Policier" FromRole="Policier1" ToRole="Policier" />
+    <NavigationProperty Name="service" Relationship="Self.FK_Policier_Service" FromRole="Policier" ToRole="service" />
+    <NavigationProperty Name="Statut" Relationship="Self.FK_Policier_Statut" FromRole="Policier" ToRole="Statut" />
+    <NavigationProperty Name="presences" Relationship="Self.FK_presences_Policier" FromRole="Policier" ToRole="presences" />
+    <NavigationProperty Name="punition" Relationship="Self.FK_punition_Policier" FromRole="Policier" ToRole="punition" />
+    <NavigationProperty Name="recompense" Relationship="Self.FK_recompense_Policier" FromRole="Policier" ToRole="recompense" />
+    <NavigationProperty Name="sanction" Relationship="Self.FK_sanction_Policier" FromRole="Policier" ToRole="sanction" />
+    <NavigationProperty Name="Affectation" Relationship="DBpoliceModel.FK_Affectation_Affectation" FromRole="Policier" ToRole="Affectation" />
+    <NavigationProperty Name="congeAnnuel" Relationship="DBpoliceModel.FK_congeAnnuel_Policier" FromRole="Policier" ToRole="congeAnnuel" />
+  </EntityType>
+  <EntityType Name="presences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="present" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="idPolicier" Type="Int32" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_presences_Policier" FromRole="presences" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="punition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_punition_Policier" FromRole="punition" ToRole="Policier" />
+    <Property Name="datefait" Type="DateTime" Precision="3" />
+    <Property Name="idtype" Type="Int32" />
+    <Property Name="duree" Type="Int32" />
+    <NavigationProperty Name="Type_sanction" Relationship="DBpoliceModel.FK_punition_punition" FromRole="punition" ToRole="Type_sanction" />
+  </EntityType>
+  <EntityType Name="recompense">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="typeRecomp" Type="Int32" />
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="autorite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dateS" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_recompense_Policier" FromRole="recompense" ToRole="Policier" />
+    <NavigationProperty Name="Type_recompense" Relationship="Self.FK_recompense_Type_recompense" FromRole="recompense" ToRole="Type_recompense" />
+  </EntityType>
+  <EntityType Name="sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="numdec" Type="Int32" />
+    <Property Name="motif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="typeSanct" Type="Int32" />
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="autorite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_sanction_Policier" FromRole="sanction" ToRole="Policier" />
+    <NavigationProperty Name="Type_sanction" Relationship="Self.FK_sanction_Type_sanction" FromRole="sanction" ToRole="Type_sanction" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_Service" FromRole="service" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="sous_direction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idDirect" Type="Int32" />
+    <NavigationProperty Name="Direction" Relationship="Self.FK_sous_direction_Direction" FromRole="sous_direction" ToRole="Direction" />
+  </EntityType>
+  <EntityType Name="Statut">
+    <Key>
+      <PropertyRef Name="Statut_ID" />
+    </Key>
+    <Property Name="Statut_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Policier" Relationship="Self.FK_Policier_Statut" FromRole="Statut" ToRole="Policier" />
+  </EntityType>
+  <EntityType Name="tblLieuNaiss">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="typ_doc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Type_Conge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="conge" Relationship="Self.FK_conge_Type_Conge" FromRole="Type_Conge" ToRole="conge" />
+  </EntityType>
+  <EntityType Name="type_dec">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mutation" Relationship="Self.FK_mutation_type_dec" FromRole="type_dec" ToRole="mutation" />
+  </EntityType>
+  <EntityType Name="type_decision">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Type_Formation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="formation" Relationship="Self.FK_formation_typeFormation" FromRole="Type_Formation" ToRole="formation" />
+  </EntityType>
+  <EntityType Name="Type_recompense">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="recompense" Relationship="Self.FK_recompense_Type_recompense" FromRole="Type_recompense" ToRole="recompense" />
+  </EntityType>
+  <EntityType Name="Type_sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="sanction" Relationship="Self.FK_sanction_Type_sanction" FromRole="Type_sanction" ToRole="sanction" />
+    <NavigationProperty Name="punition" Relationship="DBpoliceModel.FK_punition_punition" FromRole="Type_sanction" ToRole="punition" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contactno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="joinnigdate" Type="DateTime" Precision="3" />
+    <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="divers" Relationship="Self.FK_divers_User" FromRole="User" ToRole="divers" />
+  </EntityType>
+  <EntityType Name="logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateoperation" Type="DateTime" Precision="3" />
+    <Property Name="operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="principal_id" />
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="polic">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_pere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_mere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_naissance" Type="DateTime" Precision="3" />
+    <Property Name="Adresse_ID" Type="Int32" />
+    <Property Name="Taille" Type="Int32" />
+    <Property Name="Poids" Type="Int32" />
+    <Property Name="statu" Type="Int32" />
+    <Property Name="DateDebut_service" Type="DateTime" Precision="3" />
+    <Property Name="Numero_CNI" Type="Int32" />
+    <Property Name="DateDelivrance_CNI" Type="DateTime" Precision="0" />
+    <Property Name="Numero_CP" Type="Int32" />
+    <Property Name="DateDelivrance_CP" Type="DateTime" Precision="0" />
+    <Property Name="DateFin_service" Type="DateTime" Precision="3" />
+    <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idGrad" Type="Int32" />
+    <Property Name="datedec" Type="DateTime" Precision="3" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idfonction" Type="Int32" />
+    <Property Name="iddirect" Type="Int32" />
+    <Property Name="nbrepouse" Type="Int32" />
+    <Property Name="idetude" Type="Int32" />
+    <Property Name="telephone" Type="Int32" />
+    <Property Name="idservice" Type="Int32" />
+    <Property Name="iddetachement" Type="Int32" />
+    <Property Name="adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Idaresse" Type="Int32" />
+    <Property Name="agence_ID" Type="Int32" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Expr2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Expr3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Expr4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="Expr6" Type="Int32" />
+    <Property Name="Niveau_ID" Type="Int32" />
+    <Property Name="Grade_ID" Type="Int32" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direction_ID" Type="Int32" />
+    <Property Name="Type_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Statut_ID" Type="Int32" />
+    <Property Name="Expr7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="daterecru" Type="DateTime" Precision="3" />
+    <Property Name="LieuN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dateDAvanc" Type="DateTime" Precision="3" />
+    <Property Name="Affect" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_epouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nbrenfant" Type="Int32" />
+    <Property Name="DateN" Type="DateTime" Precision="3" />
+    <Property Name="Lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Epouse_ID" Type="Int32" />
+    <Property Name="Date_mariage" Type="DateTime" Precision="3" />
+    <Property Name="Date_divorce" Type="DateTime" Precision="3" />
+    <Property Name="Statut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idPolicier" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_absenc">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_pere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_mere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateab" Type="DateTime" Precision="0" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="datef" Type="DateTime" Precision="0" />
+    <Property Name="dateS" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_congé">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="dateD" Type="DateTime" Precision="3" />
+    <Property Name="dateF" Type="DateTime" Precision="3" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="dateSave" Type="DateTime" Precision="3" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Type_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_departement">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_direction">
+    <Key>
+      <PropertyRef Name="Direction_ID" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="Direction_ID" Type="Int32" Nullable="false" />
+    <Property Name="Type_direction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idDirect" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="Expr2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idsouDirect" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_enfant">
+    <Key>
+      <PropertyRef Name="Enfant_ID" />
+    </Key>
+    <Property Name="Nom_enfant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Enfant_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date_naissance" Type="DateTime" Precision="3" />
+    <Property Name="lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_epouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_formation">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateD" Type="DateTime" Precision="0" />
+    <Property Name="dateF" Type="DateTime" Precision="0" />
+    <Property Name="autorite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_grade">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="nomimage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_MUT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="idPolicier" Type="Int32" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="typdeci" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="motif" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_policDir">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Type_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_policierDivorce">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="Epouse_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Epouse_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nom_epouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_mariage" Type="DateTime" Precision="3" />
+    <Property Name="Date_divorce" Type="DateTime" Precision="3" />
+    <Property Name="Statut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nbrenfant" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_policierGrad">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_presence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="present" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Matricule_ID" Type="Int32" />
+    <Property Name="idPolicier" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_recompense">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="autorite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="numdec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_resume">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Nom_policier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="etatCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_naissance" Type="DateTime" Precision="3" />
+    <Property Name="grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="daterecru" Type="DateTime" Precision="3" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="nbrenfant" Type="Int32" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" />
+    <Property Name="Nom_policier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datedec" Type="DateTime" Precision="0" />
+    <Property Name="numdec" Type="Int32" />
+    <Property Name="motif" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="autorite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_absences_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="absences" Type="Self.absences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="absences">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_adress">
+    <End Role="adress" Type="Self.adress" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adress">
+        <PropertyRef Name="Idaresse" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="Adresse_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_conge_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="conge" Type="Self.conge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="conge">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_conge_Type_Conge">
+    <End Role="Type_Conge" Type="Self.Type_Conge" Multiplicity="0..1" />
+    <End Role="conge" Type="Self.conge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_Conge">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="conge">
+        <PropertyRef Name="typeConge" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_congeMaladie_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="congeMaladie" Type="Self.congeMaladie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="congeMaladie">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_decede">
+    <End Role="decede" Type="Self.decede" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="decede">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="decede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_decision_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="decision" Type="Self.decision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="decision">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mutation_detach_agence">
+    <End Role="detach_agence" Type="Self.detach_agence" Multiplicity="0..1" />
+    <End Role="mutation" Type="Self.mutation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="detach_agence">
+        <PropertyRef Name="agence_ID" />
+      </Principal>
+      <Dependent Role="mutation">
+        <PropertyRef Name="agence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_detachement">
+    <End Role="detach_agence" Type="Self.detach_agence" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="detach_agence">
+        <PropertyRef Name="agence_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="iddetachement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Direction">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="Direction_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="iddirect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sous_direction_Direction">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="0..1" />
+    <End Role="sous_direction" Type="Self.sous_direction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="Direction_ID" />
+      </Principal>
+      <Dependent Role="sous_direction">
+        <PropertyRef Name="idDirect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_divers_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="divers" Type="Self.divers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="divers">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_divers_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="divers" Type="Self.divers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="divers">
+        <PropertyRef Name="createby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enfants_Epouses">
+    <End Role="Epouses" Type="Self.Epouses" Multiplicity="0..1" />
+    <End Role="Enfants" Type="Self.Enfants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Epouses">
+        <PropertyRef Name="Epouse_ID" />
+      </Principal>
+      <Dependent Role="Enfants">
+        <PropertyRef Name="Epouse_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enfants_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="Enfants" Type="Self.Enfants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Enfants">
+        <PropertyRef Name="Matricule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Epouses_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="Epouses" Type="Self.Epouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Epouses">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_etatCivil_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="etatCivil" Type="Self.etatCivil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="etatCivil">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Etude">
+    <End Role="etude" Type="Self.etude" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="etude">
+        <PropertyRef Name="Niveau_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idetude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ficheSolde_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="ficheSolde" Type="Self.ficheSolde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="ficheSolde">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_filesImages_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="filesImages" Type="Self.filesImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="filesImages">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_fonction">
+    <End Role="fonction" Type="Self.fonction" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fonction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idfonction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_formation_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="formation" Type="Self.formation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="formation">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_formation_typeFormation">
+    <End Role="Type_Formation" Type="Self.Type_Formation" Multiplicity="0..1" />
+    <End Role="formation" Type="Self.formation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_Formation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="formation">
+        <PropertyRef Name="typeFormation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Grad">
+    <End Role="Grad" Type="Self.Grad" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grad">
+        <PropertyRef Name="Grade_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idGrad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instruction_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="instruction" Type="Self.instruction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="instruction">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mutation_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="mutation" Type="Self.mutation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="mutation">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mutation_type_dec">
+    <End Role="type_dec" Type="Self.type_dec" Multiplicity="0..1" />
+    <End Role="mutation" Type="Self.mutation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_dec">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mutation">
+        <PropertyRef Name="typedec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notation_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="notation" Type="Self.notation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="notation">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="1" />
+    <End Role="Policier1" Type="Self.Policier" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Policier1">
+        <PropertyRef Name="Matricule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Service">
+    <End Role="service" Type="Self.service" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="idservice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policier_Statut">
+    <End Role="Statut" Type="Self.Statut" Multiplicity="0..1" />
+    <End Role="Policier" Type="Self.Policier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statut">
+        <PropertyRef Name="Statut_ID" />
+      </Principal>
+      <Dependent Role="Policier">
+        <PropertyRef Name="statu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_presences_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="presences" Type="Self.presences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="presences">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_punition_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="punition" Type="Self.punition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="punition">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recompense_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="recompense" Type="Self.recompense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="recompense">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanction_Policier">
+    <End Role="Policier" Type="Self.Policier" Multiplicity="0..1" />
+    <End Role="sanction" Type="Self.sanction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="sanction">
+        <PropertyRef Name="idPolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recompense_Type_recompense">
+    <End Role="Type_recompense" Type="Self.Type_recompense" Multiplicity="0..1" />
+    <End Role="recompense" Type="Self.recompense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_recompense">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="recompense">
+        <PropertyRef Name="typeRecomp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanction_Type_sanction">
+    <End Role="Type_sanction" Type="Self.Type_sanction" Multiplicity="0..1" />
+    <End Role="sanction" Type="Self.sanction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_sanction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sanction">
+        <PropertyRef Name="typeSanct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBpoliceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="absences" EntityType="Self.absences" />
+    <EntitySet Name="adress" EntityType="Self.adress" />
+    <EntitySet Name="agence" EntityType="Self.agence" />
+    <EntitySet Name="conge" EntityType="Self.conge" />
+    <EntitySet Name="congeMaladie" EntityType="Self.congeMaladie" />
+    <EntitySet Name="decede" EntityType="Self.decede" />
+    <EntitySet Name="decision" EntityType="Self.decision" />
+    <EntitySet Name="detach_agence" EntityType="Self.detach_agence" />
+    <EntitySet Name="Direction" EntityType="Self.Direction" />
+    <EntitySet Name="divers" EntityType="Self.divers" />
+    <EntitySet Name="Enfants" EntityType="Self.Enfants" />
+    <EntitySet Name="Epouses" EntityType="Self.Epouses" />
+    <EntitySet Name="etatCivil" EntityType="Self.etatCivil" />
+    <EntitySet Name="etude" EntityType="Self.etude" />
+    <EntitySet Name="ficheSolde" EntityType="Self.ficheSolde" />
+    <EntitySet Name="filesImages" EntityType="Self.filesImages" />
+    <EntitySet Name="fonction" EntityType="Self.fonction" />
+    <EntitySet Name="formation" EntityType="Self.formation" />
+    <EntitySet Name="Grad" EntityType="Self.Grad" />
+    <EntitySet Name="instruction" EntityType="Self.instruction" />
+    <EntitySet Name="lien_parenté" EntityType="Self.lien_parenté" />
+    <EntitySet Name="log" EntityType="Self.log" />
+    <EntitySet Name="mutation" EntityType="Self.mutation" />
+    <EntitySet Name="notation" EntityType="Self.notation" />
+    <EntitySet Name="officier" EntityType="Self.officier" />
+    <EntitySet Name="Policier" EntityType="Self.Policier" />
+    <EntitySet Name="presences" EntityType="Self.presences" />
+    <EntitySet Name="punition" EntityType="Self.punition" />
+    <EntitySet Name="recompense" EntityType="Self.recompense" />
+    <EntitySet Name="sanction" EntityType="Self.sanction" />
+    <EntitySet Name="service" EntityType="Self.service" />
+    <EntitySet Name="sous_direction" EntityType="Self.sous_direction" />
+    <EntitySet Name="Statut" EntityType="Self.Statut" />
+    <EntitySet Name="tblLieuNaiss" EntityType="Self.tblLieuNaiss" />
+    <EntitySet Name="typ_doc" EntityType="Self.typ_doc" />
+    <EntitySet Name="Type_Conge" EntityType="Self.Type_Conge" />
+    <EntitySet Name="type_dec" EntityType="Self.type_dec" />
+    <EntitySet Name="type_decision" EntityType="Self.type_decision" />
+    <EntitySet Name="Type_Formation" EntityType="Self.Type_Formation" />
+    <EntitySet Name="Type_recompense" EntityType="Self.Type_recompense" />
+    <EntitySet Name="Type_sanction" EntityType="Self.Type_sanction" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="logs" EntityType="Self.logs" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="polic" EntityType="Self.polic" />
+    <EntitySet Name="View_absenc" EntityType="Self.View_absenc" />
+    <EntitySet Name="View_congé" EntityType="Self.View_congé" />
+    <EntitySet Name="View_departement" EntityType="Self.View_departement" />
+    <EntitySet Name="View_direction" EntityType="Self.View_direction" />
+    <EntitySet Name="View_enfant" EntityType="Self.View_enfant" />
+    <EntitySet Name="View_formation" EntityType="Self.View_formation" />
+    <EntitySet Name="View_grade" EntityType="Self.View_grade" />
+    <EntitySet Name="View_image" EntityType="Self.View_image" />
+    <EntitySet Name="View_MUT" EntityType="Self.View_MUT" />
+    <EntitySet Name="View_policDir" EntityType="Self.View_policDir" />
+    <EntitySet Name="View_policierDivorce" EntityType="Self.View_policierDivorce" />
+    <EntitySet Name="View_policierGrad" EntityType="Self.View_policierGrad" />
+    <EntitySet Name="View_presence" EntityType="Self.View_presence" />
+    <EntitySet Name="View_recompense" EntityType="Self.View_recompense" />
+    <EntitySet Name="View_resume" EntityType="Self.View_resume" />
+    <EntitySet Name="View_sanction" EntityType="Self.View_sanction" />
+    <AssociationSet Name="FK_absences_Policier" Association="Self.FK_absences_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="absences" EntitySet="absences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_adress" Association="Self.FK_Policier_adress">
+      <End Role="adress" EntitySet="adress" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_conge_Policier" Association="Self.FK_conge_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="conge" EntitySet="conge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_conge_Type_Conge" Association="Self.FK_conge_Type_Conge">
+      <End Role="Type_Conge" EntitySet="Type_Conge" />
+      <End Role="conge" EntitySet="conge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_congeMaladie_Policier" Association="Self.FK_congeMaladie_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="congeMaladie" EntitySet="congeMaladie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_decede" Association="Self.FK_Policier_decede">
+      <End Role="decede" EntitySet="decede" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_decision_Policier" Association="Self.FK_decision_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="decision" EntitySet="decision" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mutation_detach_agence" Association="Self.FK_mutation_detach_agence">
+      <End Role="detach_agence" EntitySet="detach_agence" />
+      <End Role="mutation" EntitySet="mutation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_detachement" Association="Self.FK_Policier_detachement">
+      <End Role="detach_agence" EntitySet="detach_agence" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Direction" Association="Self.FK_Policier_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sous_direction_Direction" Association="Self.FK_sous_direction_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="sous_direction" EntitySet="sous_direction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_divers_Policier" Association="Self.FK_divers_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="divers" EntitySet="divers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_divers_User" Association="Self.FK_divers_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="divers" EntitySet="divers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enfants_Epouses" Association="Self.FK_Enfants_Epouses">
+      <End Role="Epouses" EntitySet="Epouses" />
+      <End Role="Enfants" EntitySet="Enfants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enfants_Policier" Association="Self.FK_Enfants_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Enfants" EntitySet="Enfants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Epouses_Policier" Association="Self.FK_Epouses_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Epouses" EntitySet="Epouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_etatCivil_Policier" Association="Self.FK_etatCivil_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="etatCivil" EntitySet="etatCivil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Etude" Association="Self.FK_Policier_Etude">
+      <End Role="etude" EntitySet="etude" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ficheSolde_Policier" Association="Self.FK_ficheSolde_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="ficheSolde" EntitySet="ficheSolde" />
+    </AssociationSet>
+    <AssociationSet Name="FK_filesImages_Policier" Association="Self.FK_filesImages_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="filesImages" EntitySet="filesImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_fonction" Association="Self.FK_Policier_fonction">
+      <End Role="fonction" EntitySet="fonction" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_formation_Policier" Association="Self.FK_formation_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="formation" EntitySet="formation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_formation_typeFormation" Association="Self.FK_formation_typeFormation">
+      <End Role="Type_Formation" EntitySet="Type_Formation" />
+      <End Role="formation" EntitySet="formation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Grad" Association="Self.FK_Policier_Grad">
+      <End Role="Grad" EntitySet="Grad" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instruction_Policier" Association="Self.FK_instruction_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="instruction" EntitySet="instruction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mutation_Policier" Association="Self.FK_mutation_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="mutation" EntitySet="mutation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mutation_type_dec" Association="Self.FK_mutation_type_dec">
+      <End Role="type_dec" EntitySet="type_dec" />
+      <End Role="mutation" EntitySet="mutation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notation_Policier" Association="Self.FK_notation_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="notation" EntitySet="notation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Policier" Association="Self.FK_Policier_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Policier1" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Service" Association="Self.FK_Policier_Service">
+      <End Role="service" EntitySet="service" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policier_Statut" Association="Self.FK_Policier_Statut">
+      <End Role="Statut" EntitySet="Statut" />
+      <End Role="Policier" EntitySet="Policier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_presences_Policier" Association="Self.FK_presences_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="presences" EntitySet="presences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_punition_Policier" Association="Self.FK_punition_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="punition" EntitySet="punition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recompense_Policier" Association="Self.FK_recompense_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="recompense" EntitySet="recompense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanction_Policier" Association="Self.FK_sanction_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="sanction" EntitySet="sanction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recompense_Type_recompense" Association="Self.FK_recompense_Type_recompense">
+      <End Role="Type_recompense" EntitySet="Type_recompense" />
+      <End Role="recompense" EntitySet="recompense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanction_Type_sanction" Association="Self.FK_sanction_Type_sanction">
+      <End Role="Type_sanction" EntitySet="Type_sanction" />
+      <End Role="sanction" EntitySet="sanction" />
+    </AssociationSet>
+    <EntitySet Name="View_congeAnn" EntityType="DBpoliceModel.View_congeAnn" />
+    <EntitySet Name="View_congeMal" EntityType="DBpoliceModel.View_congeMal" />
+    <EntitySet Name="View_punition" EntityType="DBpoliceModel.View_punition" />
+    <AssociationSet Name="FK_punition_punition" Association="DBpoliceModel.FK_punition_punition">
+      <End Role="Type_sanction" EntitySet="Type_sanction" />
+      <End Role="punition" EntitySet="punition" />
+    </AssociationSet>
+    <EntitySet Name="Affectation" EntityType="DBpoliceModel.Affectation" />
+    <AssociationSet Name="FK_Affectation_Affectation" Association="DBpoliceModel.FK_Affectation_Affectation">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="Affectation" EntitySet="Affectation" />
+    </AssociationSet>
+    <EntitySet Name="View_affetc" EntityType="DBpoliceModel.View_affetc" />
+    <EntitySet Name="congeAnnuel" EntityType="DBpoliceModel.congeAnnuel" />
+    <AssociationSet Name="FK_congeAnnuel_Policier" Association="DBpoliceModel.FK_congeAnnuel_Policier">
+      <End Role="Policier" EntitySet="Policier" />
+      <End Role="congeAnnuel" EntitySet="congeAnnuel" />
+    </AssociationSet>
+    <EntitySet Name="View_decision" EntityType="DBpoliceModel.View_decision" />
+  </EntityContainer>
+  <EntityType Name="View_congeAnn">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="dated" Type="DateTime" Precision="3" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="duree" Type="Int32" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="View_congeMal">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="dated" Type="DateTime" Precision="3" />
+    <Property Name="duree" Type="Int32" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_punition">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="datefait" Type="DateTime" Precision="3" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_punition_punition">
+    <End Type="DBpoliceModel.Type_sanction" Role="Type_sanction" Multiplicity="0..1" />
+    <End Type="DBpoliceModel.punition" Role="punition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_sanction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="punition">
+        <PropertyRef Name="idtype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Affectation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateA" Type="DateTime" Precision="3" />
+    <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="numNs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Policier" Relationship="DBpoliceModel.FK_Affectation_Affectation" FromRole="Affectation" ToRole="Policier" />
+  </EntityType>
+  <Association Name="FK_Affectation_Affectation">
+    <End Type="DBpoliceModel.Policier" Role="Policier" Multiplicity="0..1" />
+    <End Type="DBpoliceModel.Affectation" Role="Affectation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="Affectation">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_affetc">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+    <Property Name="dateA" Type="DateTime" Precision="3" />
+    <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="numNs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="congeAnnuel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomfichier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idpolicier" Type="Int32" />
+    <Property Name="datecreate" Type="DateTime" Precision="3" />
+    <Property Name="createby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dated" Type="DateTime" Precision="3" />
+    <Property Name="datef" Type="DateTime" Precision="3" />
+    <Property Name="duree" Type="Int32" />
+    <NavigationProperty Name="Policier" Relationship="DBpoliceModel.FK_congeAnnuel_Policier" FromRole="congeAnnuel" ToRole="Policier" />
+  </EntityType>
+  <Association Name="FK_congeAnnuel_Policier">
+    <End Type="DBpoliceModel.Policier" Role="Policier" Multiplicity="0..1" />
+    <End Type="DBpoliceModel.congeAnnuel" Role="congeAnnuel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policier">
+        <PropertyRef Name="Matricule_ID" />
+      </Principal>
+      <Dependent Role="congeAnnuel">
+        <PropertyRef Name="idpolicier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_decision">
+    <Key>
+      <PropertyRef Name="Matricule_ID" />
+    </Key>
+    <Property Name="datedec" Type="DateTime" Precision="3" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Matricule_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBpoliceModelStoreContainer" CdmEntityContainer="DBpoliceEntities">
+    <EntitySetMapping Name="absences">
+      <EntityTypeMapping TypeName="DBpoliceModel.absences">
+        <MappingFragment StoreEntitySet="absences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateab" ColumnName="dateab" />
+          <ScalarProperty Name="motif" ColumnName="motif" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="datef" ColumnName="datef" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="dateS" ColumnName="dateS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="adress">
+      <EntityTypeMapping TypeName="DBpoliceModel.adress">
+        <MappingFragment StoreEntitySet="adress">
+          <ScalarProperty Name="Idaresse" ColumnName="Idaresse" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="agence">
+      <EntityTypeMapping TypeName="DBpoliceModel.agence">
+        <MappingFragment StoreEntitySet="agence">
+          <ScalarProperty Name="Departement_ID" ColumnName="Departement_ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conge">
+      <EntityTypeMapping TypeName="DBpoliceModel.conge">
+        <MappingFragment StoreEntitySet="conge">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateD" ColumnName="dateD" />
+          <ScalarProperty Name="dateF" ColumnName="dateF" />
+          <ScalarProperty Name="typeConge" ColumnName="typeConge" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="dateSave" ColumnName="dateSave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="congeMaladie">
+      <EntityTypeMapping TypeName="DBpoliceModel.congeMaladie">
+        <MappingFragment StoreEntitySet="congeMaladie">
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="datef" ColumnName="datef" />
+          <ScalarProperty Name="dated" ColumnName="dated" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="decede">
+      <EntityTypeMapping TypeName="DBpoliceModel.decede">
+        <MappingFragment StoreEntitySet="decede">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="decision">
+      <EntityTypeMapping TypeName="DBpoliceModel.decision">
+        <MappingFragment StoreEntitySet="decision">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="id_type_dec" ColumnName="id_type_dec" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detach_agence">
+      <EntityTypeMapping TypeName="DBpoliceModel.detach_agence">
+        <MappingFragment StoreEntitySet="detach_agence">
+          <ScalarProperty Name="agence_ID" ColumnName="agence_ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direction">
+      <EntityTypeMapping TypeName="DBpoliceModel.Direction">
+        <MappingFragment StoreEntitySet="Direction">
+          <ScalarProperty Name="Direction_ID" ColumnName="Direction_ID" />
+          <ScalarProperty Name="Type_direction" ColumnName="Type_direction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="divers">
+      <EntityTypeMapping TypeName="DBpoliceModel.divers">
+        <MappingFragment StoreEntitySet="divers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enfants">
+      <EntityTypeMapping TypeName="DBpoliceModel.Enfants">
+        <MappingFragment StoreEntitySet="Enfants">
+          <ScalarProperty Name="Enfant_ID" ColumnName="Enfant_ID" />
+          <ScalarProperty Name="Nom_enfant" ColumnName="Nom_enfant" />
+          <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="Epouse_ID" ColumnName="Epouse_ID" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Epouses">
+      <EntityTypeMapping TypeName="DBpoliceModel.Epouses">
+        <MappingFragment StoreEntitySet="Epouses">
+          <ScalarProperty Name="Epouse_ID" ColumnName="Epouse_ID" />
+          <ScalarProperty Name="Nom_epouse" ColumnName="Nom_epouse" />
+          <ScalarProperty Name="Date_mariage" ColumnName="Date_mariage" />
+          <ScalarProperty Name="Date_divorce" ColumnName="Date_divorce" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="nbrenfant" ColumnName="nbrenfant" />
+          <ScalarProperty Name="DateN" ColumnName="DateN" />
+          <ScalarProperty Name="Lieu" ColumnName="Lieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etatCivil">
+      <EntityTypeMapping TypeName="DBpoliceModel.etatCivil">
+        <MappingFragment StoreEntitySet="etatCivil">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etude">
+      <EntityTypeMapping TypeName="DBpoliceModel.etude">
+        <MappingFragment StoreEntitySet="etude">
+          <ScalarProperty Name="Niveau_ID" ColumnName="Niveau_ID" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ficheSolde">
+      <EntityTypeMapping TypeName="DBpoliceModel.ficheSolde">
+        <MappingFragment StoreEntitySet="ficheSolde">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="etatsolde" ColumnName="etatsolde" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="filesImages">
+      <EntityTypeMapping TypeName="DBpoliceModel.filesImages">
+        <MappingFragment StoreEntitySet="filesImages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="nomimage" ColumnName="nomimage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fonction">
+      <EntityTypeMapping TypeName="DBpoliceModel.fonction">
+        <MappingFragment StoreEntitySet="fonction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="formation">
+      <EntityTypeMapping TypeName="DBpoliceModel.formation">
+        <MappingFragment StoreEntitySet="formation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateD" ColumnName="dateD" />
+          <ScalarProperty Name="dateF" ColumnName="dateF" />
+          <ScalarProperty Name="typeFormation" ColumnName="typeFormation" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="autorite" ColumnName="autorite" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grad">
+      <EntityTypeMapping TypeName="DBpoliceModel.Grad">
+        <MappingFragment StoreEntitySet="Grad">
+          <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instruction">
+      <EntityTypeMapping TypeName="DBpoliceModel.instruction">
+        <MappingFragment StoreEntitySet="instruction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lien_parenté">
+      <EntityTypeMapping TypeName="DBpoliceModel.lien_parenté">
+        <MappingFragment StoreEntitySet="lien-parenté">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log">
+      <EntityTypeMapping TypeName="DBpoliceModel.log">
+        <MappingFragment StoreEntitySet="log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="dateoperation" ColumnName="dateoperation" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mutation">
+      <EntityTypeMapping TypeName="DBpoliceModel.mutation">
+        <MappingFragment StoreEntitySet="mutation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="agence" ColumnName="agence" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="motif" ColumnName="motif" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="typedec" ColumnName="typedec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notation">
+      <EntityTypeMapping TypeName="DBpoliceModel.notation">
+        <MappingFragment StoreEntitySet="notation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="notationAnnuelle" ColumnName="notationAnnuelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="officier">
+      <EntityTypeMapping TypeName="DBpoliceModel.officier">
+        <MappingFragment StoreEntitySet="officier">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="titre" ColumnName="titre" />
+          <ScalarProperty Name="idDirec" ColumnName="idDirec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Policier">
+      <EntityTypeMapping TypeName="DBpoliceModel.Policier">
+        <MappingFragment StoreEntitySet="Policier">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Nom_pere" ColumnName="Nom_pere" />
+          <ScalarProperty Name="Nom_mere" ColumnName="Nom_mere" />
+          <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+          <ScalarProperty Name="Adresse_ID" ColumnName="Adresse_ID" />
+          <ScalarProperty Name="Taille" ColumnName="Taille" />
+          <ScalarProperty Name="Poids" ColumnName="Poids" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="DateDebut_service" ColumnName="DateDebut_service" />
+          <ScalarProperty Name="DateFin_service" ColumnName="DateFin_service" />
+          <ScalarProperty Name="Numero_CNI" ColumnName="Numero_CNI" />
+          <ScalarProperty Name="DateDelivrance_CNI" ColumnName="DateDelivrance_CNI" />
+          <ScalarProperty Name="Numero_CP" ColumnName="Numero_CP" />
+          <ScalarProperty Name="DateDelivrance_CP" ColumnName="DateDelivrance_CP" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+          <ScalarProperty Name="idGrad" ColumnName="idGrad" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="photo1" ColumnName="photo1" />
+          <ScalarProperty Name="photo2" ColumnName="photo2" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="idfonction" ColumnName="idfonction" />
+          <ScalarProperty Name="iddirect" ColumnName="iddirect" />
+          <ScalarProperty Name="nbrepouse" ColumnName="nbrepouse" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="idetude" ColumnName="idetude" />
+          <ScalarProperty Name="idservice" ColumnName="idservice" />
+          <ScalarProperty Name="iddetachement" ColumnName="iddetachement" />
+          <ScalarProperty Name="decede" ColumnName="decede" />
+          <ScalarProperty Name="daterecru" ColumnName="daterecru" />
+          <ScalarProperty Name="dateDAvanc" ColumnName="dateDAvanc" />
+          <ScalarProperty Name="LieuN" ColumnName="LieuN" />
+          <ScalarProperty Name="Affect" ColumnName="Affect" />
+          <ScalarProperty Name="nbrenfant" ColumnName="nbrenfant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="presences">
+      <EntityTypeMapping TypeName="DBpoliceModel.presences">
+        <MappingFragment StoreEntitySet="presences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="present" ColumnName="present" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="punition">
+      <EntityTypeMapping TypeName="DBpoliceModel.punition">
+        <MappingFragment StoreEntitySet="punition">
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="idtype" ColumnName="idtype" />
+          <ScalarProperty Name="datefait" ColumnName="datefait" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recompense">
+      <EntityTypeMapping TypeName="DBpoliceModel.recompense">
+        <MappingFragment StoreEntitySet="recompense">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="typeRecomp" ColumnName="typeRecomp" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="autorite" ColumnName="autorite" />
+          <ScalarProperty Name="dateS" ColumnName="dateS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sanction">
+      <EntityTypeMapping TypeName="DBpoliceModel.sanction">
+        <MappingFragment StoreEntitySet="sanction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="motif" ColumnName="motif" />
+          <ScalarProperty Name="typeSanct" ColumnName="typeSanct" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="autorite" ColumnName="autorite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service">
+      <EntityTypeMapping TypeName="DBpoliceModel.service">
+        <MappingFragment StoreEntitySet="service">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sous_direction">
+      <EntityTypeMapping TypeName="DBpoliceModel.sous_direction">
+        <MappingFragment StoreEntitySet="sous_direction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="idDirect" ColumnName="idDirect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statut">
+      <EntityTypeMapping TypeName="DBpoliceModel.Statut">
+        <MappingFragment StoreEntitySet="Statut">
+          <ScalarProperty Name="Statut_ID" ColumnName="Statut_ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLieuNaiss">
+      <EntityTypeMapping TypeName="DBpoliceModel.tblLieuNaiss">
+        <MappingFragment StoreEntitySet="tblLieuNaiss">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="typ_doc">
+      <EntityTypeMapping TypeName="DBpoliceModel.typ_doc">
+        <MappingFragment StoreEntitySet="typ_doc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_Conge">
+      <EntityTypeMapping TypeName="DBpoliceModel.Type_Conge">
+        <MappingFragment StoreEntitySet="Type_Conge">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_dec">
+      <EntityTypeMapping TypeName="DBpoliceModel.type_dec">
+        <MappingFragment StoreEntitySet="type_dec">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_decision">
+      <EntityTypeMapping TypeName="DBpoliceModel.type_decision">
+        <MappingFragment StoreEntitySet="type_decision">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_Formation">
+      <EntityTypeMapping TypeName="DBpoliceModel.Type_Formation">
+        <MappingFragment StoreEntitySet="Type_Formation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_recompense">
+      <EntityTypeMapping TypeName="DBpoliceModel.Type_recompense">
+        <MappingFragment StoreEntitySet="Type_recompense">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_sanction">
+      <EntityTypeMapping TypeName="DBpoliceModel.Type_sanction">
+        <MappingFragment StoreEntitySet="Type_sanction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="DBpoliceModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="contactno" ColumnName="contactno" />
+          <ScalarProperty Name="joinnigdate" ColumnName="joinnigdate" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logs">
+      <EntityTypeMapping TypeName="DBpoliceModel.logs">
+        <MappingFragment StoreEntitySet="logs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="dateoperation" ColumnName="dateoperation" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBpoliceModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="polic">
+      <EntityTypeMapping TypeName="DBpoliceModel.polic">
+        <MappingFragment StoreEntitySet="polic">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Nom_pere" ColumnName="Nom_pere" />
+          <ScalarProperty Name="Nom_mere" ColumnName="Nom_mere" />
+          <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+          <ScalarProperty Name="Adresse_ID" ColumnName="Adresse_ID" />
+          <ScalarProperty Name="Taille" ColumnName="Taille" />
+          <ScalarProperty Name="Poids" ColumnName="Poids" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="DateDebut_service" ColumnName="DateDebut_service" />
+          <ScalarProperty Name="Numero_CNI" ColumnName="Numero_CNI" />
+          <ScalarProperty Name="DateDelivrance_CNI" ColumnName="DateDelivrance_CNI" />
+          <ScalarProperty Name="Numero_CP" ColumnName="Numero_CP" />
+          <ScalarProperty Name="DateDelivrance_CP" ColumnName="DateDelivrance_CP" />
+          <ScalarProperty Name="DateFin_service" ColumnName="DateFin_service" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+          <ScalarProperty Name="idGrad" ColumnName="idGrad" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="idfonction" ColumnName="idfonction" />
+          <ScalarProperty Name="iddirect" ColumnName="iddirect" />
+          <ScalarProperty Name="nbrepouse" ColumnName="nbrepouse" />
+          <ScalarProperty Name="idetude" ColumnName="idetude" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="idservice" ColumnName="idservice" />
+          <ScalarProperty Name="iddetachement" ColumnName="iddetachement" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="Idaresse" ColumnName="Idaresse" />
+          <ScalarProperty Name="agence_ID" ColumnName="agence_ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Niveau_ID" ColumnName="Niveau_ID" />
+          <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="Direction_ID" ColumnName="Direction_ID" />
+          <ScalarProperty Name="Type_direction" ColumnName="Type_direction" />
+          <ScalarProperty Name="Statut_ID" ColumnName="Statut_ID" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="daterecru" ColumnName="daterecru" />
+          <ScalarProperty Name="LieuN" ColumnName="LieuN" />
+          <ScalarProperty Name="dateDAvanc" ColumnName="dateDAvanc" />
+          <ScalarProperty Name="Affect" ColumnName="Affect" />
+          <ScalarProperty Name="Nom_epouse" ColumnName="Nom_epouse" />
+          <ScalarProperty Name="nbrenfant" ColumnName="nbrenfant" />
+          <ScalarProperty Name="DateN" ColumnName="DateN" />
+          <ScalarProperty Name="Lieu" ColumnName="Lieu" />
+          <ScalarProperty Name="Epouse_ID" ColumnName="Epouse_ID" />
+          <ScalarProperty Name="Date_mariage" ColumnName="Date_mariage" />
+          <ScalarProperty Name="Date_divorce" ColumnName="Date_divorce" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_absenc">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_absenc">
+        <MappingFragment StoreEntitySet="View_absenc">
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Nom_pere" ColumnName="Nom_pere" />
+          <ScalarProperty Name="Nom_mere" ColumnName="Nom_mere" />
+          <ScalarProperty Name="dateab" ColumnName="dateab" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="datef" ColumnName="datef" />
+          <ScalarProperty Name="dateS" ColumnName="dateS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_congé">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_congé">
+        <MappingFragment StoreEntitySet="View_congé">
+          <ScalarProperty Name="dateD" ColumnName="dateD" />
+          <ScalarProperty Name="dateF" ColumnName="dateF" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="dateSave" ColumnName="dateSave" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Type_direction" ColumnName="Type_direction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_departement">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_departement">
+        <MappingFragment StoreEntitySet="View_departement">
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_direction">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_direction">
+        <MappingFragment StoreEntitySet="View_direction">
+          <ScalarProperty Name="Direction_ID" ColumnName="Direction_ID" />
+          <ScalarProperty Name="Type_direction" ColumnName="Type_direction" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="idDirect" ColumnName="idDirect" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="idsouDirect" ColumnName="idsouDirect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_enfant">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_enfant">
+        <MappingFragment StoreEntitySet="View_enfant">
+          <ScalarProperty Name="Nom_enfant" ColumnName="Nom_enfant" />
+          <ScalarProperty Name="Enfant_ID" ColumnName="Enfant_ID" />
+          <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="Nom_epouse" ColumnName="Nom_epouse" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_formation">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_formation">
+        <MappingFragment StoreEntitySet="View_formation">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="dateD" ColumnName="dateD" />
+          <ScalarProperty Name="dateF" ColumnName="dateF" />
+          <ScalarProperty Name="autorite" ColumnName="autorite" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_grade">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_grade">
+        <MappingFragment StoreEntitySet="View_grade">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_image">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_image">
+        <MappingFragment StoreEntitySet="View_image">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="nomimage" ColumnName="nomimage" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_MUT">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_MUT">
+        <MappingFragment StoreEntitySet="View_MUT">
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="typdeci" ColumnName="typdeci" />
+          <ScalarProperty Name="motif" ColumnName="motif" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_policDir">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_policDir">
+        <MappingFragment StoreEntitySet="View_policDir">
+          <ScalarProperty Name="Type_direction" ColumnName="Type_direction" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_policierDivorce">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_policierDivorce">
+        <MappingFragment StoreEntitySet="View_policierDivorce">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Epouse_ID" ColumnName="Epouse_ID" />
+          <ScalarProperty Name="Nom_epouse" ColumnName="Nom_epouse" />
+          <ScalarProperty Name="Date_mariage" ColumnName="Date_mariage" />
+          <ScalarProperty Name="Date_divorce" ColumnName="Date_divorce" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="nbrenfant" ColumnName="nbrenfant" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_policierGrad">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_policierGrad">
+        <MappingFragment StoreEntitySet="View_policierGrad">
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_presence">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_presence">
+        <MappingFragment StoreEntitySet="View_presence">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="present" ColumnName="present" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="idPolicier" ColumnName="idPolicier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_recompense">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_recompense">
+        <MappingFragment StoreEntitySet="View_recompense">
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="autorite" ColumnName="autorite" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_resume">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_resume">
+        <MappingFragment StoreEntitySet="View_resume">
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="etatCivil" ColumnName="etatCivil" />
+          <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="daterecru" ColumnName="daterecru" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="nbrenfant" ColumnName="nbrenfant" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_sanction">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_sanction">
+        <MappingFragment StoreEntitySet="View_sanction">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="Nom_policier" ColumnName="Nom_policier" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+          <ScalarProperty Name="numdec" ColumnName="numdec" />
+          <ScalarProperty Name="motif" ColumnName="motif" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="autorite" ColumnName="autorite" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_congeAnn">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_congeAnn">
+        <MappingFragment StoreEntitySet="View_congeAnn">
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="dated" ColumnName="dated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_congeMal">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_congeMal">
+        <MappingFragment StoreEntitySet="View_congeMal">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="dated" ColumnName="dated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_punition">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_punition">
+        <MappingFragment StoreEntitySet="View_punition">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="datefait" ColumnName="datefait" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Affectation">
+      <EntityTypeMapping TypeName="DBpoliceModel.Affectation">
+        <MappingFragment StoreEntitySet="Affectation">
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="numNs" ColumnName="numNs" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="dateA" ColumnName="dateA" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_affetc">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_affetc">
+        <MappingFragment StoreEntitySet="View_affetc">
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="numNs" ColumnName="numNs" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="dateA" ColumnName="dateA" />
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="congeAnnuel">
+      <EntityTypeMapping TypeName="DBpoliceModel.congeAnnuel">
+        <MappingFragment StoreEntitySet="congeAnnuel">
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="datef" ColumnName="datef" />
+          <ScalarProperty Name="dated" ColumnName="dated" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="datecreate" ColumnName="datecreate" />
+          <ScalarProperty Name="idpolicier" ColumnName="idpolicier" />
+          <ScalarProperty Name="document" ColumnName="document" />
+          <ScalarProperty Name="nomfichier" ColumnName="nomfichier" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_decision">
+      <EntityTypeMapping TypeName="DBpoliceModel.View_decision">
+        <MappingFragment StoreEntitySet="View_decision">
+          <ScalarProperty Name="Matricule_ID" ColumnName="Matricule_ID" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="datedec" ColumnName="datedec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
