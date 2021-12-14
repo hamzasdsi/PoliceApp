@@ -27,11 +27,11 @@ namespace PoliceApp
 
             cryRpt.Load(@"C:\Reportpolice\resump.rpt");
             cryRpt.DataSourceConnections.Clear();
-            cryRpt.DataSourceConnections[0].SetConnection("192.168.70.182", "DBpolice", "sa", "sdsi*2018");
-            crConnectionInfo.ServerName = "192.168.70.182";
+            cryRpt.DataSourceConnections[0].SetConnection("192.168.70.34", "DBpolice", "sa", "sdsi*2021");
+            crConnectionInfo.ServerName = "192.168.70.34";
             crConnectionInfo.DatabaseName = "DBpolice";
             crConnectionInfo.UserID = "sa";
-            crConnectionInfo.Password = "sdsi*2018";
+            crConnectionInfo.Password = "sdsi*2021";
 
             CrTables = cryRpt.Database.Tables;
             foreach (CrystalDecisions.CrystalReports.Engine.Table CrTable in CrTables)

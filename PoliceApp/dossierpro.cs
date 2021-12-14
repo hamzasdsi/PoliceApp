@@ -82,6 +82,13 @@ namespace PoliceApp
                     rdr.Close();
                     fs.Close();
 
+                    if (metroComboBox1.SelectedValue.ToString() == "2")
+                    {
+
+                        string updateDateAvancement = "update policier set dateDAvanc ='" + dateTimePicker1.Value + "' where Matricule_ID = "+textBox1.Text+"";
+                        SqlCommand myCommandDateAvancement = new SqlCommand(updateDateAvancement, dbConn);
+                        myCommandDateAvancement.ExecuteNonQuery();
+                    }
 
                     SqlCommand myCommand = new SqlCommand(insertCmd, dbConn);
 

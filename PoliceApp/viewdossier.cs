@@ -45,7 +45,6 @@ namespace PoliceApp
             {
                 List<decision> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.decision.ToList();
                
              //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox1.Text.ToString());
@@ -133,21 +132,33 @@ namespace PoliceApp
                         }
                         //This will open the PDF file so, the result will be seen in default PDF viewer 
                         Process.Start("fichierDecision.pdf");
-                    }
-                }
+                    }}
+                
             if (e.ColumnIndex == 5)
             {
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                string var = "" + selectedRow.Cells["Column5"].Value;
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from decision where numdec ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.button1_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                    string var = "" + selectedRow.Cells["Column5"].Value;
+                    string var2 = textBox1.Text;
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from decision where numdec ='" + var + "' and idpolicier = "+var2+"";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.button1_Click(null, null);
+                    cn.Close();
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
 
             }
         }
@@ -165,7 +176,6 @@ namespace PoliceApp
             {
                 List<congeAnnuel> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.congeAnnuel.ToList();
 
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox2.Text.ToString());
@@ -224,7 +234,6 @@ namespace PoliceApp
             {
                 List<divers> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.divers.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox7.Text.ToString());
                 lstusr = dbpfen.divers.Where(x => x.idpolicier == var).ToList();
@@ -251,7 +260,6 @@ namespace PoliceApp
             {
                 List<notation> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.notation.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox6.Text.ToString());
                 lstusr = dbpfen.notation.Where(x => x.idpolicier == var).ToList();
@@ -278,7 +286,6 @@ namespace PoliceApp
             {
                 List<instruction> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.instruction.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox5.Text.ToString());
                 lstusr = dbpfen.instruction.Where(x => x.idpolicier == var).ToList();
@@ -305,7 +312,6 @@ namespace PoliceApp
             {
                 List<ficheSolde> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.ficheSolde.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox4.Text.ToString());
                 lstusr = dbpfen.ficheSolde.Where(x => x.idpolicier == var).ToList();
@@ -332,7 +338,6 @@ namespace PoliceApp
             {
                 List<punition> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.punition.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBoxPunition.Text.ToString());
                 lstusr = dbpfen.punition.Where(x => x.idpolicier == var).ToList();
@@ -363,7 +368,6 @@ namespace PoliceApp
             {
                 List<Affectation> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.affectation.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBoxAffectation.Text.ToString());
                 lstusr = dbpfen.affectation.Where(x => x.idpolicier == var).ToList();
@@ -391,7 +395,6 @@ namespace PoliceApp
             {
                 List<congeMaladie> lstusr = null;
                 DBpoliceEntities dbpfen = new DBpoliceEntities();
-                lstusr = dbpfen.congeMaladie.ToList();
                 //   dataGridView1.Rows.Clear();
                 int var = Convert.ToInt32(textBox3.Text.ToString());
                 lstusr = dbpfen.congeMaladie.Where(x => x.idpolicier == var).ToList();
@@ -460,17 +463,29 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 5)
             {
-                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn1"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from congeAnnuel where id ='" +var+ "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.button2_Click_1(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn1"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from congeAnnuel where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.button2_Click_1(null, null);
+                    cn.Close();
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+               
 
             }
 
@@ -531,18 +546,31 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 6)
             {
-                int selectedrowindex = dataGridView3.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView3.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn5"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from congeMaladie where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonCongeMaladie_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
 
+                    int selectedrowindex = dataGridView3.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView3.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn5"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from congeMaladie where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonCongeMaladie_Click(null, null);
+                    cn.Close();
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+              
             }
         }
 
@@ -593,17 +621,30 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 5)
             {
-                int selectedrowindex = dataGridViewAffectation.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridViewAffectation.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["ColumnAffectation1"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from affectation where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonAffectation_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridViewAffectation.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridViewAffectation.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["ColumnAffectation1"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from affectation where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonAffectation_Click(null, null);
+                    cn.Close();
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+               
 
             }
         }
@@ -655,17 +696,30 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 5)
             {
-                int selectedrowindex = dataGridViewPunition.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridViewPunition.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["ColumnPunition1"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from punition where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonPunition_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridViewPunition.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridViewPunition.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["ColumnPunition1"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from punition where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonPunition_Click(null, null);
+                    cn.Close();
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+              
 
             }
         }
@@ -717,17 +771,30 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 4)
             {
-                int selectedrowindex = dataGridView4.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView4.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn9"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from ficheSolde where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonFicheSolde_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView4.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView4.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn9"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from ficheSolde where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonFicheSolde_Click(null, null);
+                    cn.Close();
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+               
 
             }
         }
@@ -779,17 +846,31 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 3)
             {
-                int selectedrowindex = dataGridView5.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView5.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn10"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from instruction where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonInstruction_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView5.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView5.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn10"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from instruction where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonInstruction_Click(null, null);
+                    cn.Close();
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+               
+               
 
             }
         }
@@ -841,18 +922,31 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 3)
             {
-                int selectedrowindex = dataGridView6.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView6.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn13"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from notation where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonNotation_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView6.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView6.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn13"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from notation where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonNotation_Click(null, null);
+                    cn.Close();
 
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+              
             }
         }
 
@@ -903,18 +997,32 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 3)
             {
-                int selectedrowindex = dataGridView7.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView7.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn16"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from divers where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.buttonDivers_Click(null, null);
-                cn.Close();
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView7.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView7.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn16"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from divers where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.buttonDivers_Click(null, null);
+                    cn.Close();
 
+
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+              
+              
             }
         }
 
@@ -989,18 +1097,29 @@ namespace PoliceApp
             }
             if (e.ColumnIndex == 3)
             {
-                int selectedrowindex = dataGridView8.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView8.Rows[selectedrowindex];
-                int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn18"].Value);
-                ConnectionString cs = new ConnectionString();
-                SqlConnection cn = new SqlConnection(cs.DBConn());
-                string insertCmd = "delete from etatCivil where id ='" + var + "'";
-                cn.Open();
-                SqlCommand myCommand = new SqlCommand(insertCmd, cn);
-                myCommand.ExecuteNonQuery();
-                this.button9_Click(null,null);
-                cn.Close();
-
+                PopupForm popup = new PopupForm();
+                DialogResult dialogresult = popup.ShowDialog();
+                if (dialogresult == DialogResult.OK)
+                {
+                    int selectedrowindex = dataGridView8.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView8.Rows[selectedrowindex];
+                    int var = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn18"].Value);
+                    ConnectionString cs = new ConnectionString();
+                    SqlConnection cn = new SqlConnection(cs.DBConn());
+                    string insertCmd = "delete from etatCivil where id ='" + var + "'";
+                    cn.Open();
+                    SqlCommand myCommand = new SqlCommand(insertCmd, cn);
+                    myCommand.ExecuteNonQuery();
+                    this.button9_Click(null, null);
+                    cn.Close();
+                    Console.WriteLine("You clicked OK");
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                {
+                    Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+                }
+                popup.Dispose();
+               
             }
         }
         private void tb_KeyDown(object sender, KeyEventArgs e)

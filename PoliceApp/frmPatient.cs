@@ -2731,11 +2731,13 @@ namespace PoliceApp
                      
                         DateTime date1 = Convert.ToDateTime(lstusr4[i].daterecru.Value.Date);
                         String dateEng = Convert.ToString(date1.ToShortDateString());
-                 
-
-                         DateTime date2 = Convert.ToDateTime(lstusr4[i].dateDAvanc.Value.Date); 
-
-                        String dateAV = Convert.ToString(date2.ToShortDateString());
+                        String dateAV = "";
+                        if (lstusr4[i].dateDAvanc != null)
+                        {
+                            DateTime date2 = Convert.ToDateTime(lstusr4[i].dateDAvanc.Value.Date);
+                             dateAV = Convert.ToString(date2.ToShortDateString());
+                        }
+                       
                         string d = lstusr4[i].Type_direction.ToString();
                         if (Matricule_ID != null && Nom_policier != null && Date_naissance != null && Lieu != null && Grade != null && dateEng != null && dateAV != null)
                         {
@@ -2790,10 +2792,10 @@ namespace PoliceApp
 
         private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsLetter(e.KeyChar) )
+            //{
+            //    e.Handled = true;
+            //}
 
 
         }

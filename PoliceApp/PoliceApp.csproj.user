@@ -6,7 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <PublishUrlHistory>C:\SetupAppPolice\|F:\SetupAppPolice\|F:\SetupPolice\|E:\SetupPolice\|publish\</PublishUrlHistory>
+    <PublishUrlHistory>D:\SETUP2\|D:\SETUP\|E:\SetupPoliceApp2\|C:\SetupAppPolice\|F:\SetupAppPolice\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />
@@ -17,5 +17,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
 </Project>
